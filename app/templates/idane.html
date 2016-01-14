@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+      {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+<div class="alert alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{ message }}
+</div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+  <div class="page-header">
+    <h2 align="center">idane.pl</h2>
+  </div>
+  {% block page_content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+	<strong>idane.pl</strong> to strona poświęcona analizie
+	danych, statystyce, matematyce i programowaniu
+	statystycznemu. 
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}
+{% endblock %}
+

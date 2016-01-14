@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+ {% block head %}
+    {{ super() }}
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+ {% endblock %}
+
+{% block content %}
+      {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+<div class="alert alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+      {{ message }}
+</div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+  {% block page_content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h1>{{ articles[0].chapter_title }}</h1>
+      

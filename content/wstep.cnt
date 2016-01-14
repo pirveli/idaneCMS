@@ -1,0 +1,87 @@
+Wstęp
+*-*-
+wstep
+*-*-
+<p>Statystyka i biostatystyka są dziedzinami wiedzy, które dotyczą ogromnej rzeszy ludzi - zarówno naukowców/badaczy, jak i użytkowników literatury naukowej, takich jak lekarze, pracownicy administracji publicznej, biznesmeni i przedsiębiorcy, nauczyciele oraz wszystkie osoby, które chcą zrozumieć wyniki badań podawane w mediach, przez sięgnięcie do prac
+*-*-
+<p>Statystyka i biostatystyka są dziedzinami wiedzy, które dotyczą ogromnej rzeszy ludzi - zarówno naukowców/badaczy, jak i użytkowników literatury naukowej, takich jak lekarze, pracownicy administracji publicznej, biznesmeni i przedsiębiorcy, nauczyciele oraz wszystkie osoby, które chcą zrozumieć wyniki badań podawane w mediach, przez sięgnięcie do prac oryginalnych.</p>
+<div>
+	Nabycie odpowiedniej wiedzy statystycznej jest jednak trudne. Większość dostępnych materiałów i kursów skierowana jest do osób, które albo już posiadają podstawy matematyczne, albo są skłonne, i co ważniejsze, mają na to czas, aby je opanować. Czas jest tutaj kluczowy. Większość osób zainteresowanych statystyką ma odpowiednie predyspozycje intelektualne do opanowania tej wiedzy, jednak nie ma na to czasu. Wspomniane predyspozycje intelektualne zwykle dają podstawy do uzyskania na tyle atrakcyjnej pracy, że przeznaczanie czasu na wgryzanie się w szczegóły matematyki i statystyki jest po prostu potężnym wydatkiem finansowym.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Mimo wszystko czasem spotykamy osoby, które nie mając podstaw matematycznych, bardzo sprawnie poruszają się po statystyce. W zastosowaniu statystyki w swojej dziedzinie (np. statystyka w badaniach naukowych czy w badaniach opinii publicznej) osoby te bywają lepsze niż profesjonalni statystycy. Ich wiedza nie została nabyta w wyniku wielu lat spędzonych na poznawaniu tajników matematyki. Uzyskali ją w wyniku wielu lat zadawania odpowiednich pytań i omijaniu raf matematycznych. Osoby te nauczyły się jak czytać wyniki analiz statystycznych i dowiedziały jakie metody są odpowiednie do konkretnych problemów, a potem stosowały tę wiedzę przez wiele lat. W końcu ich biegłość osiągnęła taki poziom, że nie potrzebują porady profesjonalnych statystyków. Ba! Same udzielają tych rad i wykonują obliczenia, mimo że nigdy nie poznały fundamentów matematycznych.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Jest to możliwe, ponieważ statystycy sami doprowadzili metodologię statystyczną do tego stanu. Podczas czytania artykułu zawierającego wyniki zastosowania na przykład tzw. wielowymiarowego modelu Coxa do analizy przeżycia, nikt, łącznie ze statystykami, nie zastanawia się ani nad matematyczną konstrukcją tego modelu. Sprawdzamy do jakich danych został zastosowany, jakie otrzymano wyniki i jak te wyniki zostały zinterpretowane. Wszystkie procedury statystyczne mogą być rozumiane i stosowane całkowicie niezależnie od ich konstrukcji matematycznej. Mimo oporu wielu osób, będę się przy tym zdaniu upierał.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Jak wspomnialem, przytłaczająca większość książek i kursów wyprowadza użytkownika na głębokie wody matematyki. Brak materiałów, które idą drogą wybraną przez tych niewielu opisanych powyżej, którzy starają się zrozumieć statystykę od stony praktycznej.</div>
+<div>
+	&nbsp;</div>
+<div>
+	Celem (Mini) Podręcznika Biostatystyki  jest przeprowadzenie Użytkownika przez statystykę wymijając rafy matematyki, która nigdy do niczego nie będzie mu potrzebna. Przez lata odpowiadam na pytania praktyków i wiem, że droga ta prowadzi do celu, czyli opanowania statystyki na poziomie pozwalającym na swobodne posługiwanie się nią w celu zrozumienia badań, zaprezentowania swoich własnych wyników, a ostatecznie do samodzielnego przeprowadzenia analiz.</div>
+<div>
+	Zdaję sobie sprawę, że moje podejście może być kontrowersyjne, ale jestem głęboko przekonany, że jest ono skuteczne, nawet jeżeli podczas nauki Czytelnik idzie bardzo na skróty.</div>
+<div>
+	&nbsp;</div>
+<div>
+	<h2> Jak używać (Mini) Podręcznika</h2>
+	<div>
+		Materiał zawarty w (Mini) Podręczniku składa się z wielu odrębnych rozdziałów, które w założeniu są od siebie niezależne. Tak więc aby zrozumieć ostatni temat wcale nie trzeba przeczytać poprzedzających go części. Zrozumienie każdego z rozdziałów wymaga jedna opanowania podstaw, które zawarte są w rozdziale pierwszym pt. <span style="color:#696969;"> <a href="http://idane.pl/?q=content/podstawy#">Podstawy</a></span>. Czyli chcąc zrozumieć zagadnienie np. regresji logistycznej czytamy <span style="color:#696969;"> <a href="http://idane.pl/?q=content/podstawy#">Podstawy</a></span> a następnie rozdział &bdquo;Regresja logistyczna&rdquo;. Często tekst w różnych rozdziałach będzie się pokrywał (np. opis samego zagadnienia &bdquo;regresji&rdquo; będzie bardzo podobny w rozdziale &bdquo;Regresja liniowa&rdquo; i &bdquo;Regresja logistyczna&rdquo;). Zdarzy się również, że Czytelnik będzie musiał przeczytać dwa rozdziały &ndash; dotyczy to jednak wyłącznie przypadków, gdy jakaś technika jest rozszerzona, np. na więcej zmiennych. Na przykład, aby zrozumieć zagadnienie regresji logistycznej dla przypadku wieloczynnikowego należy wcześniej zapoznać się z przypadkiem jednoczynnikowym.&nbsp;</div>
+</div>
+<h2>Oprogramowanie</h2>
+<p>Statystyka jest nierozłącznie związana z komputerami. Moim zdaniem, gdyby nie powszechnie dostępne oprogramowanie statystyczne, większość najważniejszych osiągnięć współczesnej nauki w dziedzinach takich jak medycyna czy ekonomia nie byłaby możliwa, gdyż obróbka statystyczna stanowiłaby&nbsp;<strong>bardzo</strong>&nbsp;wąskie gardło. Większość czasu spędzanoby na oczekiwaniu na obróbkę statystyczną, a bez wyników pośrednich naukowcy nie byliby w stanie kontynuować swoich badań.&nbsp;</p>
+<p>Współcześnie istnieje tak naprawdę kilka znakomitych, pełnych systemów statystycznych i wiele programów do wykonywania obliczeń specjalistycznych. Te systemy statystyczne to <a href="http://www.medcalc.org/">Medcalc</a>, <a href="http://www-01.ibm.com/software/analytics/spss/">SPSS</a>, <a href="http://www.statsoft.pl/toc.html">Statistica</a>, <a href="http://www.sas.com/">SAS</a> czy <a href="http://www.stata.com/">Stata</a> (kolejność według mojej własnej preferencji).&nbsp;</p>
+<p>Istnieje jeszcze jeden pakiet, który dzięki swojej wszechstronności i elastyczności zmienia w obecnych czasach podejście do analizy danych. Jest to słynny <a href="http://r-project.org">język R</a> - podstawowe narzędzie dziesiątków tysięcy satystyków na całym świecie. Jedną z najczęściej wymienianych cech tego systemu jest jego całkowita darmowość.&nbsp;</p>
+<p>Język R jest jednak&nbsp;<strong>bardzo</strong>&nbsp;trudny! Trudno się go nauczyć nawet profesjonalnym programistom, gdyż oprócz umiejętności programowania wymaga opisanej i zdyskwalifikowanej wcześniej znajomości matematycznych podstaw statystyki.&nbsp;</p>
+<p>Fantastyczni twórcy języka R ostatnio rozwiązali ten problem, tworząc nakładkę graficzną na R, o nazwie&nbsp;<a href="http://www.rcommander.com/"><strong>RCommander</strong></a>. Dzięki niej można wykonywać wszystkie obliczenia, które udostępniają wyżej wymienione systemy komercyjne, nie płacąc ani grosza.&nbsp;</p>
+<p>(Mini) Podręcznik Statystyki stosuje jeszcze inne rozwiązanie. Każdy rozdział zawiera w sobie napisany w R (przy pomocy pakietu shiny) program pozwalający na wykonywanie obliczeń opisanych w danym rozdziale przy pomocy przeglądarki internetowej. Ponieważ podręcznik ma docelowo zawierać większość metod niezbędnych w podstawowych obliczeniach statystycznych, prawie wszystkie potrzebne obliczenia można wykonać na stronach idane.pl.</p>
+<p>Poniżej znajduje się przykład takiego programu, przy pomocy którego można narysować tzw. wykres typu spiderplot - inne, bardziej przydatne programy, znajdują się w kolejnych rozdziałach podręcznika. <--Aby z nich skorzystać należy się zarejestrować. Konto na idane.pl oraz dostęp do materiałów oraz oprogramowania są całkowicie darmowe.&nbsp;--></p>
+<h2> Program statystyczny: spiderplot</h2>
+Poniższy program rysuje tzw. spiderplot. Najpierw wybieramy kolory: tło i pajęczyna. Później podajemy długość &bdquo;szprychy&rdquo;, która będzie wielkością referencyjną - do niej porównywać będziemy wszystkie dane. W kolejnym oknie wpisujemy dane oddzielone od siebie spacjami (można używać zarówno kropki jak i przecinka dziesiętnego: można wpisać zarówno 1,1 jak i 1.1). Wykres będzie wyglądał najlepiej, jeżeli dane będą mniejsze niż długość &bdquo;szprychy&rdquo;. Na koniec podajemy nazwy zmiennych.
+
+<div align="left">
+<h1>UWAGA!</h1>
+<p>Z powodu <strong>bardzo</strong> dużej liczby osób wykonujących obliczenia przy pomocy udostępnionych programów przeglądarkowych, co pociągało za sobą okresowe duże obciążenie serwera, jestem niestety zmuszony wyłączyć programy na idane.pl. </p>
+
+<p>Jednak <strong>NADAL MOŻNA ICH UŻYWAĆ ZA DARMO</strong> w znacznie ulepszonej postaci, oraz wielu innych programów, tutaj: <a href="https://statystyka.plgrid.pl">https://statystyka.plgrid.pl</a>. </p>
+
+<p> Usługa udostępniana jest polskim naukowcom przez Poznańskie Centrum Komputerowo Sieciowe w ramach projektu pl.grid. Używanie oprogramowania wymaga uzyskania (darmowego) konta - jak to zrobić, opisuję poniżej.</p>
+
+<p>Najlepiej zarejestrować się jako zwykły użytkownik. Jeżeli ktoś nie ma OPI, to może użyć mojego: 117253 i napisać, że jest się z mojej grupy badawczej.</p>
+
+<p> W ogóle WARTO REJESTROWAĆ SIĘ JAKO CZŁONEK GRUPY BADAWCZEJ OSOBY, KTÓRA JUŻ JEST W PLGRIDZIE (czyli np. mojej) NAWET JEŻELI SIĘ MA OPI, BO WTEDY CAŁA PROCEDURA JEST BARDZO SZYBKA I NIE TRZEBA CZEKAĆ NA KONTO. Potem można zmienić to w HelpDesku.</p>
+
+<p>Jeżeli chodzi o pozostałe pola, to właściwie można wpisać właściwie cokolwiek.</p>
+
+<p>W przyszłości zostanie wprowadzona kategoria "lekki użytkownik", gdzie będzie się podawało tylko imię, nazwisko i miejsce pracy i automatycznie uzyska się dostęp do naszego oprogramowania.</p>
+
+<p>Po uzyskaniu konta plgrid należy przejść do usługi: https://statystyka.plgrid.pl/ i się zalogować, system zapyta, czy aplikują o usługę i należy odpowiedzieć, że tak.</p>
+
+<p>Tutaj są filmy instruktażowe jak używać serwisu:</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/rsad.mp4"> Film 1: Wprowadzenie</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/ttest.mp4"> Film 2: Test T</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/survival.mp4"> Film 3: Analiza przeżycia</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/dodawanie_aplikacji.mp4"> Film 4: Dodawanie własnej aplikacji</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/acf.mp4"> Film 5: Time series</a></li>
+</ul>
+</div>
+*-*-
+statystyka
+*-*-
+uczenie statystyki, uczenie się statystyki, matematyka w statystyce
+*-*-
+book
+*-*-
+Minipodręcznik biostatystyki
+*-*-
+minipodrecznik
+*-*-
+20
+*-*-
+05/06/2013
+*-*-

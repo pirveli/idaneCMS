@@ -1,0 +1,90 @@
+Testy rozkładu
+*-*-
+testy_rozkladu
+*-*-
+<p>Jednym z podstawowych kryteriów stosowalności technik statystycznych jest rozkład danych, do którego konkretna technika zostanie użyta. W podstawowych zastosowaniach biostatystycznych interesuje nas właściwie jedynie czy rozkład populacji jest <a href="http://idane.pl/node/9#rozkladnormalny">normalny </a>(Gaussowski), czy nie. Rozkład populacji staramy się ustalić na podstawie zebranej próby [...]</p>
+*-*-
+<p><code><strong><span style="color:#696969;">Aby zrozumieć ten rozdział należy zapoznać się z rozdziałem</span><span style="color:#696969;"> <a href="http://idane.pl/node/9#">Podstawy</a></span><span style="color:#696969;">.</span></strong></code></p>
+<p>Jednym z podstawowych kryteriów stosowalności technik statystycznych jest rozkład danych, do którego konkretna technika zostanie użyta. W podstawowych zastosowaniach biostatystycznych interesuje nas właściwie jedynie czy rozkład populacji jest <a href="http://idane.pl/node/9#rozkladnormalny">normalny </a>(Gaussowski), czy nie. Rozkład populacji staramy się ustalić na podstawie zebranej próby, więc w tym celu stosujemy odpowiednie testy statystyczne. Najbardziej uniwersalnym i w obecnych czasach najbardziej rozpowszechnionym testem używanym do tego celu wydaje się test <strong>Shapiro-Wilka</strong>. Historycznie najczęściej używany był test Kołmogorowa-Smirnowa, jednak okazał się on nie dość czuły. Dla dużych grup oba testy z całą pewnością dadzą ten sam wynik.</p>
+<p><a href="http://idane.pl/node/9#H0">Hipotezą zerową</a> testu Shapiro-Wilka jest: &quot;ten rozkład jest normalny&quot;. W związku z tym, jeżeli nasz program komputerowy poda wynik p&lt;0,05, to <em>odrzucamy hipotezę o normalności rozkładu</em>, czyli stwierdzamy &quot;ten rozkład nie jest normalny&quot;. Jeżeli otrzymujemy p&gt;=0,05 (większe lub równe 0,05), to <em>nie odrzucamy hipotezy o normalności rozkładu</em> i od tej chwili traktujemy ten rozkład jak rozkład normalny.&nbsp;</p>
+<p>W tym miejscu możemy przedstawić krótką tabelkę podającą sposób radzenia sobie z dwoma rodzajami rozkładów:</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width: 500px; ">
+	<tbody>
+		<tr>
+			<td>
+				<strong>typ rozkładu</strong></td>
+			<td>
+				<strong>test statystyczny</strong></td>
+			<td>
+				<strong>parametry rozkładu</strong></td>
+		</tr>
+		<tr>
+			<td>
+				normalny</td>
+			<td>
+				parametryczny</td>
+			<td>
+				średnia, odchylenie standardowe</td>
+		</tr>
+		<tr>
+			<td>
+				inny niż normalny</td>
+			<td>
+				nieparametryczny</td>
+			<td>
+				mediana, IQR</td>
+		</tr>
+	</tbody>
+</table>
+<p>Przyjrzyjmy się prostemu przykładowi. Przeanalizujemy zbiór zawierający wzrost i masę ciała piętnastu Amerykanek. Zbiór można pobrać w formacie Excela <a href="../web_documents/women.xls">tutaj</a>, a w formacie pliku tekstowego csv <a href="..web_documents/women.csv">tutaj</a>. Dane te są częścią darmowego <a href="http://www.r-project.org">pakietu statystycznego R</a>.</p>
+<p>Ładujemy dane do naszego wybranego programu statystycznego i wybieramy test Shapiro-Wilka. Dla zmiennej &quot;height&quot; p&gt;0.05 (p=0.754), więc traktujemy rozkład jako rozkład normalny. Dla zmiennej &quot;weight&quot; również p&gt;0.05 (p=0.699), więc jak poprzednio, w dalszych rozważaniach przyjmujemy, że jest to rozkład normalny. Zwróćmy uwagę, że nie padło kategoryczne &quot;jest to rozkład normalny&quot;, ponieważ ściśle rzecz biorąc po prostu <em>nie znaleźliśmy dowodów, że ten rozkład nie jest normalny</em>. Jest to jednak tylko niuans, który nic nie zmienna w sposobie w jaki dalej będziemy traktowali dane.</p>
+<p><img alt="" src="/static/rysqq.jpg" class="img-responsive center-block">Istnieją również wizualne metody sprawdzenia, czy dane mogą pochodzić z rozkładu normalnego. Jedną z najczęściej używanych technik jest wykres QQ (qqplot), czyli wykres kwantyl kwantyl. &nbsp;Technika ta jest bardzo ściśle związana z testem Shapiro-Wilka. Przykład takiego wykresu dla zmiennej &quot;wieght&quot; z analizowanego tutaj zbioru zamieszczony jest obok. Interpretacja jest następująca: jeżeli punkty wykresu leżą blisko prostej i są równomiernie rozłożone po jej jednej i drugiej stronie (np. naprzemiennie), to dane pochodzą z rozkładu normalnego. Na naszym rysunku widać drobne odstępstwa w przypadku punktów na samej górze i na samym dole - punkty te leżą dalej od prostej niż pozostałe punkty. Jednak odstępstwo to jest na tyle małe, że test Shapiro-Wilka nie stwierdza odstępstw od rozkładu normalnego (patrz test przeprowadzony wyżej i wartość <strong>p</strong> w nim uzyskana).&nbsp;</p>
+<p>Wizualny test przy pomocy wykresu QQ jest często podstawą do przyjęcia normalności jakiegoś zbioru, mimo że formalne testy mówią, że rozkład normalny nie jest. Stać się tak może na przykład gdy dane są mocno zdyskretyzowane (np. zaokrąglone), nie będziemy się jednak wgłębiać w ten przypadek i poprzestaniemy na samy stwierdzeniu, że może się &nbsp;tak&nbsp;zdarzyć.&nbsp;</p>
+<h2>Program statystyczny: wykres kwantyl-kwantyl (qq-plot) i test Shapiro Wilka</h2>
+Poniżej zamieszczony program służy rysowaniu wykresu kwantyl-kwantyl z dostępnych danych (np. z danych zawartych w <strong> jednej</strong> kolumnie w arkuszu kalkulacyjnym) oraz do przeprowadzenia testu normalności Shapiro-Wilka. Aby z niego skorzystać wpisujemy dane do pierwszego pola, oddzielając  liczby spacjami (można używać zarówno kropki jak i przecinka dziesiętnego: można wpisać zarówno 1,1 jak i 1.1) lub wklejamy dane z Excela bądź LibreOffice (OpenOffice) - <a href="http://idane.pl/content/program-testy-rozkladu">ten diagram</a> demonstruje jak to zrobić. W następne pole wpisujemy tytuł wykresu (który pojawi się na górze). W kolejnych dwóch polach podajemy opis osi (np. moglibyśmy chcieć opisać osie po angielsku: "theoretical quantiles" na osi <emph>x</emph> i "sample quantiles" na osi <emph>y</emph>. Potem wybieramy tylko kolor punktów na wykresie i gotowe. Pod wykresem znaleźć można wynik testu Shapiro-Wilka, dotyczącego normalności wprowadzonych danych. 
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  Jeżeli przydał Ci się ten rozdział, podziel się z innymi! 
+ <a class="a2a_button_facebook"></a>    <a class="a2a_button_twitter"></a>   <a class="a2a_button_google_plus"></a>   <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+</div>
+<div align="left">
+<h1>UWAGA!</h1>
+<p>Z powodu <strong>bardzo</strong> dużej liczby osób wykonujących obliczenia przy pomocy udostępnionych programów przeglądarkowych, co pociągało za sobą okresowe duże obciążenie serwera, jestem niestety zmuszony wyłączyć programy na idane.pl. </p>
+
+<p>Jednak <strong>NADAL MOŻNA ICH UŻYWAĆ ZA DARMO</strong> w znacznie ulepszonej postaci, oraz wielu innych programów, tutaj: <a href="https://statystyka.plgrid.pl">https://statystyka.plgrid.pl</a>. </p>
+
+<p> Usługa udostępniana jest polskim naukowcom przez Poznańskie Centrum Komputerowo Sieciowe w ramach projektu pl.grid. Używanie oprogramowania wymaga uzyskania (darmowego) konta - jak to zrobić, opisuję poniżej.</p>
+
+<p>Najlepiej zarejestrować się jako zwykły użytkownik. Jeżeli ktoś nie ma OPI, to może użyć mojego: 117253 i napisać, że jest się z mojej grupy badawczej.</p>
+
+<p> W ogóle WARTO REJESTROWAĆ SIĘ JAKO CZŁONEK GRUPY BADAWCZEJ OSOBY, KTÓRA JUŻ JEST W PLGRIDZIE (czyli np. mojej) NAWET JEŻELI SIĘ MA OPI, BO WTEDY CAŁA PROCEDURA JEST BARDZO SZYBKA I NIE TRZEBA CZEKAĆ NA KONTO. Potem można zmienić to w HelpDesku.</p>
+
+<p>Jeżeli chodzi o pozostałe pola, to właściwie można wpisać właściwie cokolwiek.</p>
+
+<p>W przyszłości zostanie wprowadzona kategoria "lekki użytkownik", gdzie będzie się podawało tylko imię, nazwisko i miejsce pracy i automatycznie uzyska się dostęp do naszego oprogramowania.</p>
+
+<p>Po uzyskaniu konta plgrid należy przejść do usługi: https://statystyka.plgrid.pl/ i się zalogować, system zapyta, czy aplikują o usługę i należy odpowiedzieć, że tak.</p>
+
+<p>Tutaj są filmy instruktażowe jak używać serwisu:</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/rsad.mp4"> Film 1: Wprowadzenie</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/ttest.mp4"> Film 2: Test T</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/survival.mp4"> Film 3: Analiza przeżycia</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/dodawanie_aplikacji.mp4"> Film 4: Dodawanie własnej aplikacji</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/acf.mp4"> Film 5: Time series</a></li>
+</ul>
+</div>
+*-*-
+statystyka
+*-*-
+rozkład normalny, q-q plot, wykres kwantyl-kwantyl, test normalności, test Shapiro-Wilka
+*-*-
+book
+*-*-
+Miniodręcznik biostatystyki
+*-*-
+minipodrecznik
+*-*-
+40
+*-*-
+15/08/2013
+*-*-

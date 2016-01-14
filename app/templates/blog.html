@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block head %}
+{{ super() }}
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+  tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+  });
+</script>
+<script type="text/javascript" async
+	src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+{% endblock %}
+
+{% block content %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-warning">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+{% block page_content %}
+<div class="container">
+  <div class="row">
+    <div class="row">
+      <div class="col-md-8">
+	<h3><a href="{{ url_for('main.book_chapter',
+		     content_container_short=articles[0]['content_container'].short_title, 
+		     short_title=articles[0]['short_title']) }}">{{
+	    articles[0]['title'] }}</a></h3>
+	
+	{{ articles[0]['short_body']|safe }}
+	<p align="right"><a href="{{ url_for('main.book_chapter',
+				  content_container_short=articles[0]['content_container'].short_title, 
+				  short_title=articles[0]['short_title']) }}"> Czytaj dalej <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+
+      </div>
+    </div>
+    {% for article in articles[1:] %}
+    <div class="row"> 
+      {% if article['new_row'] %}
+      <div class="container"> <!-- start a new container for a new row -->
+	<div class="row"> <!-- start a new row -->
+	  <div class="col-md-4"> <!-- start a column in the new row -->
+	    <h3><a href="{{ url_for('main.book_chapter',
+			 content_container_short=article['content_container'].short_title, 
+			 short_title=article['short_title']) }}">{{ article['title'] }}</a></h3>
+	    {{ article['short_body']|safe }}
+	    <p align="right"><a href="{{ url_for('main.book_chapter',
+				      content_container_short=article['content_container'].short_title, 
+				      short_title=article['short_title']) }}"> Czytaj dalej <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+
+	  </div>
+	  {% else %}
+	  <div class="col-md-4"> <!-- start a column in the existing row -->
+	    <h3><a href="{{ url_for('main.book_chapter',
+			 content_container_short=article['content_container'].short_title, 
+			 short_title=article['short_title']) }}">{{ article['title'] }}</a></h3>
+	    {{ article['short_body']|safe }}
+	    <p align="right"><a href="{{ url_for('main.book_chapter',
+				      content_container_short=article['content_container'].short_title, 
+				      short_title=article['short_title']) }}"> Czytaj dalej <span class="glyphicon glyphicon-arrow-right"></span></a></p>
+	  </div> <!-- close the column -->
+	</div> <!-- close the original row -->
+	<div class="container"> <!-- and container -->
+	  {% endif %}
+	  
+	  {% endfor %}
+	</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,38 @@
+Revolution Analytics wykupione przez Microsoft
+*-*-
+27.01.2015
+*-*-
+23.01.2015 ogłoszono, że Microsoft kupi firmę Revolution Analytics. Dla mnie osobiście jest to wielka sprawa i bardzo ważna wiadomość, ale nie mam się z kim nią podzielić. W moim bezpośrednim otoczeniu nie ma nikogo, kto tak jak ja jest zainteresowany analizą danych, więc <strong>zaczynam pisać bloga</strong> :)
+
+Revolution Analytics to jedna z bardzo niewielu firm dostarczająca rozwiązań [...]
+*-*-
+23.01.2015 ogłoszono, że Microsoft kupi firmę Revolution Analytics. Dla mnie osobiście jest to wielka sprawa i bardzo ważna wiadomość, ale nie mam się z kim nią podzielić. W moim bezpośrednim otoczeniu nie ma nikogo, kto tak jak ja jest zainteresowany analizą danych, więc <strong>zaczynam pisać bloga</strong> :)
+
+Revolution Analytics to jedna z bardzo niewielu firm dostarczająca rozwiązań komercyjnych dla R. Powstała w 2007 roku jako spinn-off Wydziału Informatyki Uniwersytetu Yale. Z początku największą siłą REvolution Computing (REC), jak wtedy nazywała się firma, było dodanie do R możliwości obliczeń równoległych. Ponieważ R już wtedy zdobył sobie dużą rzeszę użytkowników wśród osób zajmujących się analizą danych, Pfizer, jedna z największych firm farmaceutycznych, zdecydowała się na wykorzystanie wiedzy swoich pracowników, którzy z wielu powodów woleli R niż inne rozwiązania, oraz nowych możliwości obliczeniowych oferowanych przez RC. W roku 2008 w REC zainwestował Intel, a w 2009 w REC zainwestowała firma. 
+
+W 2010 REvolution Computing zmieniła profil działalności kładąc większy nacisk na metody <em>Big Data</em> i zmieniła nazwę na Revolution Analytics. Otwarta wersja interpretera języka R jest ograniczona pamięcią maszyny - wszystkie obiekty przechowywane i przetwarzane są w pamięci RAM. Revolution Analytics wprowadziła rozwiązania umożliwiające przetwarzanie danych na dysku<sup>1</sup> (podobnie jak ma to miejsce w SASie i podobnych programach). Od tego czasu jest bezpośrednim konkurentem firm takich jak SAS, choć nie ma takiego udziału w rynku. 
+
+Oprogramowanie Revolution Analytics jest dostępne na wszystkich systemach operacyjnych i mże być używane w klastrach obliczeniowych. Podstawowym produktem jest Revolution R Enterprise, które implementuje zarówno obliczenia równoległe jak i rozwiązania dla dużych danych. Kilka miesięcy temu RA wydała również darmową wersję Revolution R Open, która jest darmową i otwartą wersją oprogramowania RA (niestety wersja ta nie ma obsługi Big Data). RA wspiera również projekty opensource'owe, takie jak ParallelR czy RHadoop oraz współfinansuje wiele konferencji i innych przedsięwzięć środowiska związanego z R. 
+
+Microsoft od jakiegoś czasu inwestuje w rozwiązania typu uczenie maszynowe (Machine Learning) i przetwarzanie dużych danych i coraz bardziej zdecydowanie wchodzi w ten segment rynku. Niedawno wprowadzone usługi sieciowe, takie jak Azure, umożliwiają wykorzystanie infrastruktury sprzętowej i software'owej dostarczanej przez Microsoft do analizy (dużych) danych oraz implementacji algorytmów uczenia maszynowego. Kupując Revolution Analytics Microsoft chce dołączyć komercyjną wersję R do obecnie istniejących rozwiązań. 
+
+Oczywiście wydarzenie jakim jest zakup przez giganta software'owego firmy bazującej na wolnym oprogramowaniu (standardowy interpreter R jest nadal podstawą rozwiązań Revolution Analytics) musi budzić kontrowersje. Pojawiają się obawy, że Microsoft będzie faworyzował wersję dla Windows a wersję dla Linuxa potraktuje po macoszemu, pozwalając się jej najpierw "przeterminować", a następnie całkowicie wycofując z oferty. Osobiście uważam, że te obawy są nieuzasadnione. W ostatnich latach byliśmy świadkami ocieplenia stosunków pomiędzy Microsoftem a ogólnie pojętym Linuxem. Microsoft finansuje wiele projektów open source zarówno na Windows jak i na Linuxa. Na Azure również możemy bez najmniejszego problemu korzystać z tego systemu. Dziwne więc byłoby, gdyby Microsoft odciął sobie dostęp do wiedzy i portfeli użytkowników Linuxa, których w świecie ciężkich obliczeń i dużych danych jest naprawdę niemało. 
+
+(Artykuł opublikowany również w serwisie statystycy.pl)
+
+<sup>1</sup> Opensource'owa wersja R również może korzystać z dysku jako pamięci, o ile zainstalujemy odpowiednie pakiety, takie jak np. <strong>ff / ffbase</strong>, <strong>bigmemory</strong> i kilka innych.
+*-*-
+biznes
+*-*-
+R, Revolution Analytics, high performance computing, big data, Microsoft
+*-*-
+blog
+*-*-
+Blog
+*-*-
+blog
+*-*-
+1
+*-*-
+27/01/2015
+*-*-

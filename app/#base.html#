@@ -1,0 +1,54 @@
+    {% extends "bootstrap/base.html" %}
+    {% macro left_sidebar() -%}
+    <div class="col-md-2">
+      <a href="{{ url_for('main.register_dataset') }}" class="btn btn-success btn-lg btn-block">Register dataset</a>
+      <h3 align="center">Browse by</h3>
+      <a href="{{url_for('main.users_list')}}" class="btn btn-default btn-lg btn-block">User name</a>
+      <a href="{{url_for('main.categories_list')}}" class="btn btn-default btn-lg btn-block">Dataset category</a>
+      <a href="{{url_for('main.keywords_list')}}" class="btn btn-default btn-lg btn-block">Keyword</a>
+    </div>
+    {%- endmacro %}
+
+    {% block title %} DataShare {% endblock %}
+    {% block navbar %}
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{ url_for('main.data_share') }}">Datashare</a>
+          <button class="navbar-toggle"  data-toggle="collapse" data-target=".navHeaderCollapse">
+        <!--  <span class="sr-only"> Toggle navigation</span> -->
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse navHeaderCollapse">
+          <ul class="nav navbar-nav navbar-right">
+
+        {% if current_user.is_authenticated() %}
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ current_user.email }} <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li> <a href="#">My profile</a></li>
+          <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+        </ul>
+        </li>
+        {% else %}
+        <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
+        {% endif %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+
+{% block content %}
+<div class="containter">
+
+    {% block page_content %}
+<div class="col-md-4">
+  <p> jakies informacje</p>
+</div>
+  {% endblock %}
+</div>
+{% endblock %}

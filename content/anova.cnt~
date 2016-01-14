@@ -1,0 +1,75 @@
+ANOVA i test Kruskala-Wallisa
+*-*-
+anova_i_kw
+*-*-
+<p><code><strong><span style="color:#696969;">Aby zrozumieć ten rozdział należy zapoznać się z rozdziałem</span><span style="color:#696969;"> <a href="http://idane.pl/node/9#">Podstawy</a></span><span style="color:#696969;">.</span></strong>&nbsp;<br />
+<strong><font color="#696969">Warto r&oacute;wnież zapoznać się z rozdziałem <a href="http://idane.pl/node/11">Porównania dwóch grup</a></font></strong></code></p>
+<p>W poprzednim rozdziale opisywaliśmy porównania dwóch grup (nie ma problemu, jeżeli go nie przerobiliście - i tak bez obaw możecie czytać dalej). Często jednak zdarza się, że grup jest znacznie więcej i chcemy sprawdzić, czy istnieją pomiędzy nimi jakieś różnice, czy nie. Badając na przykład rytm serca u dzieci, moglibyśmy zapytać, czy u dzieci w przedziałach wiekowych 0-1 (grupa 1), 2-3 (grupa 2), 4-5 (grupa 3) rytm ten różni się, czy jest taki sam w każdej grupie. W tym celu moglibyśmy zebrać pewną liczbę dzieci w każdym z tych przedziałów wiekowych i zmierzyć dla każdego z nich częstotliwość bicia serca. W wyniku otrzymalibyśmy trzy zbiory danych, które jednocześnie poddalibyśmy analizie statystycznej, mającej na celu udzielenie odpowiedzi na postawione pytanie. W zależności od odpowiedzi moglibyśmy zechcieć zadawać kolejne pytania (tak zwane pytania post-hoc), np. w której grupie jest najwyższy, które grupy nie różnią się od siebie itd.</p>
+<h2>Analiza wariancji (ANOVA)</h2>
+<p>Najczęściej stosowaną techniką w takim przypadku jest analiza wariancji czyli ANOVA(<em>ang.</em>analysis of variance). Analiza wariancji jest bardzo bogata i obejmuje wiele technik i zastosowań, jednak my w tym podręczniku skupimy się tylko na najprostszym zastosowaniu, czyli tak zwanej <em>jednokierunkowej analizie wariancji</em>.</p>
+<p>Analiza wariancji sprawdza, czy średnie w badanych grupach są takie same. W tym celu, trochę paradoksalnie, porównuje się w pewien specyficzny sposób wariancje w tych grupach - stąd właśnie wzięła się nazwa ANOVA. (<em>Osoby, które czytały poprzedni rozdział zauważyły zapewne, że cel analizy wariancji jest taki sam jak testu t. Faktycznie: w przypadku zastosowania ANOVA do dwóch grup uzyskujemy dokładnie taki sam wynik jak przy zastosowaniu testu t.</em>)</p>
+<p>Podstawowym założeniem analizy przy pomocy ANOVA jest normalność rozkładu. Hipotezą zerową w ANOVA jest: <em>wszystkie analizowane grupy mają tę samą średnią</em>, hipoteza alternatywna to zwykle <em>średnie w analizowanych grupach są różne</em>.</p>
+<p> Wielu osobom ANOVA wydaje się dość dziwną techniką. Przecież zdecydowanie lepiej i prościej byłoby zadać pytanie typu "jeżeli ustawimy średnie od najmniejszej do
+największej, to jaka będzie kolejność?" lub inaczej "w której grupie średnia jest największa, w której jest druga co do wielkości itd.". Faktycznie, odpowiedź na tego typu pytanie, sformułowane być może w bardziej poprawny statystycznie sposób, byłaby bardziej wartościowa dla badacza. Problem w tym, że pytanie tego typu w rzeczywistości składa się z wielu "pod-pytań" (czy średnia w grupie 1 jest większa niż średnia w grupie 2? czy średnia w grupie 1 jest większa niż w grupie 3, itd.). Zasady działania i konstrukcja analizy statystycznej są takie, że im więcej mamy pytań, tym więcej musimy mieć danych, aby w wiarygodny sposób na nie odpowiedzieć. Ponieważ danych jest zwykle ograniczona ilość (dane kosztują! trzeba za nie zapłacić czasem, pieniędzmi itd.), możemy zadać ograniczoną liczbę pytań, zwykle tylko jedno. Najbardziej logicznym pytaniem jest "czy te grupy w ogóle się różnią?". Temu właśnie służy ANOVA. Kolejne pytania i związane z nimi testy statystyczne, które zadajemy po poznaniu odpowiedzi na pytanie "czy grupy się różnią", np. "w której grupie średnia jest największa", nazywamy analizą post-hoc. Tego typu analizą nie będziemy się zajmować w tym podręczniku. </p>
+<p> Technikę ANOVA zilustrujemy często używanym zbiorem danych pochodzących z eksperymentu, w którym badano czas krzepnięcia krwi u 24 zwierząt, które przypisano losowo do czterech grup (A, B, C, D); w każdej grupie stosowano inną dietę. Po ukończeniu eksperymentu wszystkim zwierzętom pobrano próbki krwi i zbadano czas krzepnięcia. Dane można pobrać w formacie Excela <a href="../web_documents/krzepniecie.xls">tutaj</a>, a w postaci tekstowej csv  <a href="../web_documents/krzepniecie.csv">tutaj</a>. </p>
+<p> <strong><em>Pierwsze przykazanie analizy danych mówi</em>: "będziesz oglądał dane przed analizą"</strong>. W przypadku porównywania grup najlepszym narzędziem graficznym jest technika "pudełka z wąsami" (box-and-whiskers plot). Odpowiedni rysunek jest zamieszczony po prawej.
+
+<img src="/static/rysunekANOVA.jpg" class="img-responsive center-block">
+
+</p>
+<p> Na rysunku wyraźnie widać, że grupy różnią się między sobą, pozostaje tylko pytanie, czy te różnice są istotne statystycznie, czy nie. Dane, których używamy mają jedną podstawową wadę - jest ich bardzo niewiele. W związku z tym różnice, które oglądane gołym okiem wydają się duże, mogą okazać się nieistotne statystycznie. Sprawdźmy więc. Do programu na dole strony (patrz opis programu w ostatnim punkcie) wklejmy dane. Otrzymujemy bardzo małą wartość <strong>p</strong>, czyli wnioskować możemy, że grupy różnią się między sobą.</p>
+<h2>Test Kruskala Wallisa</h2>
+<p>Podobnie jak w wielu innych testach, ANOVA wymaga, aby dane w poszczególnych grupach miały <a href="http://idane.pl/node/9#rozkladnormalny">rozkład normalny</a>. Oczywiście bardzo często tak nie jest i wtedy musimy użyć <a href="http://idane.pl/node/9#nieparametryczne">testów nieparametrycznych</a>. Nieparametrycznym odpowiednikiem ANOVA dla najprostszych analiz jest test Kruskal-Wallisa, który normalności nie wymaga.</p>
+<p> W naszym zbiorze danych nie mamy właściwie szans na sprawdzenie normalności w grupach, ponieważ są one zbyt mało liczne. W ogóle prezentowany tutaj zbiór nadaje się tylko jako demonstracja techniki.</p>
+<p> Załóżmy więc, że dane nie mają rozkładu normalnego i chcemy zastosować test Kruskala-Wallisa. Ponownie wklejmy nasze dane do programu na dole strony, tym razem jednak zaznaczając nieparametryczny test Kruskala-Wallisa. Ponownie uzyskujemy statystycznie istotnie różnice pomiędzy grupami. W innym przypadku (dla innych danych) moglibyśmy nie stwierdzić różnic między grupami - test Kruskala-Wallisa jest mniej czuły niż ANOVA. Jeżeli nie mamy konieczności używania testu nieparametrycznego, nie używajmy go, bo możemy przeoczyć ciekawe i istotne efekty. </p>
+<p>W tym miejscu zakończymy nasze rozważania o analizie wariancji. Prawdę mówiąc temat został jedynie zasygnalizowany. Gdybyśmy chcieli szczegółowo opisać analizę wariancji trzeba by poświęcić temu tematowi osobny (mini) podręcznik.</p>
+<h2>Program statystyczny: ANOVA i test Kruskala-Wallisa</h2>
+Poniższy program rysuje tzw. boxplot (pudełko z wąsami) dla każdej z analizowanych grup. W pierwszym polu zaznaczamy, czy chodzi nam o analizę wariancji (domyślnie), czy o test Kruskala-Wallisa. W następnym polu wklejamy lub wpisujemy dane (czyli np. czasy krzepnięcia) , a w kolejnym przynależność do odpowiedniej grupy (czyli np. do której grupy zwierzę, dla którego uzyskano dany wynik należy. Można używać zarówno kropki jak i przecinka dziesiętnego: można wpisać zarówno 1,1 jak i 1.1. Ten <a href="http://idane.pl/content/program-anova-i-test-kruskala-wallisa"><span style="color:Grey"><strong><span style="background-color:Blue">diagram</span></strong></span></a> opisuje proces przeklejania danych z Excela lub LibreOffice (OpenOffice). W kolejnym polu wpisujemy opis osi <em>y</em>. Opis osi <em>x</em> jest wstawiany automatycznie na podstawie grup wymienionych w drugim polu (np. A, B, C, D). Na koniec wybieramy kolor boxplotów. </p>
+
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  Jeżeli przydał Ci się ten rozdział, podziel się z innymi! 
+ <a class="a2a_button_facebook"></a>    <a class="a2a_button_twitter"></a>   <a class="a2a_button_google_plus"></a>  <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+</div>
+
+<div align="left">
+<h1>UWAGA!</h1>
+<p>Z powodu <strong>bardzo</strong> dużej liczby osób wykonujących obliczenia przy pomocy udostępnionych programów przeglądarkowych, co pociągało za sobą okresowe duże obciążenie serwera, jestem niestety zmuszony wyłączyć programy na idane.pl. </p>
+
+<p>Jednak <strong>NADAL MOŻNA ICH UŻYWAĆ ZA DARMO</strong> w znacznie ulepszonej postaci, oraz wielu innych programów, tutaj: <a href="https://statystyka.plgrid.pl">https://statystyka.plgrid.pl</a>. </p>
+
+<p> Usługa udostępniana jest polskim naukowcom przez Poznańskie Centrum Komputerowo Sieciowe w ramach projektu pl.grid. Używanie oprogramowania wymaga uzyskania (darmowego) konta - jak to zrobić, opisuję poniżej.</p>
+
+<p>Najlepiej zarejestrować się jako zwykły użytkownik. Jeżeli ktoś nie ma OPI, to może użyć mojego: 117253 i napisać, że jest się z mojej grupy badawczej.</p>
+
+<p> W ogóle WARTO REJESTROWAĆ SIĘ JAKO CZŁONEK GRUPY BADAWCZEJ OSOBY, KTÓRA JUŻ JEST W PLGRIDZIE (czyli np. mojej) NAWET JEŻELI SIĘ MA OPI, BO WTEDY CAŁA PROCEDURA JEST BARDZO SZYBKA I NIE TRZEBA CZEKAĆ NA KONTO. Potem można zmienić to w HelpDesku.</p>
+
+<p>Jeżeli chodzi o pozostałe pola, to właściwie można wpisać właściwie cokolwiek.</p>
+
+<p>W przyszłości zostanie wprowadzona kategoria "lekki użytkownik", gdzie będzie się podawało tylko imię, nazwisko i miejsce pracy i automatycznie uzyska się dostęp do naszego oprogramowania.</p>
+
+<p>Po uzyskaniu konta plgrid należy przejść do usługi: https://statystyka.plgrid.pl/ i się zalogować, system zapyta, czy aplikują o usługę i należy odpowiedzieć, że tak.</p>
+
+<p>Tutaj są filmy instruktażowe jak używać serwisu:</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/rsad.mp4"> Film 1: Wprowadzenie</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/ttest.mp4"> Film 2: Test T</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/survival.mp4"> Film 3: Analiza przeżycia</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/dodawanie_aplikacji.mp4"> Film 4: Dodawanie własnej aplikacji</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/acf.mp4"> Film 5: Time series</a></li>
+</ul>
+</div>
+*-*-
+statystyka
+*-*-
+podstawy, wartość p, populacja, próba
+*-*-
+book
+*-*-
+Minipodręcznik biostatystyki
+*-*-
+minipodrecznik
+*-*-
+60
+*-*-
+27/10/2013
+*-*-

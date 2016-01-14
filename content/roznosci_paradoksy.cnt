@@ -1,0 +1,84 @@
+Paradoks strażnika i więźnia
+*-*-
+paradoks_straznika_i_wieznia
+*-*-
+<p>Paradoks Strażnika i Więźnia jest tak naprawdę odmianą wcześniej opisywanego paradoksu Monte Hall'a, choć na pierwszy rzut oka nie wydają się one podobne. </p>
+<p>Bohaterami paradoksu są: strażnik, trzech skazanych na śmierć więźniów (o nazwiskach A, B i C) i gubernator. Całość dzieje się w USA, gdzie gubernator może ułaskawić skazanego na karę śmierci. Któregoś dnia</p>
+*-*-
+<p>Paradoks Strażnika i Więźnia jest tak naprawdę odmianą wcześniej opisywanego paradoksu Monte Hall'a, choć na pierwszy rzut oka nie wydają się one podobne. </p>
+<p>Bohaterami paradoksu są: strażnik, trzech skazanych na śmierć więźniów (o nazwiskach A, B i C) i gubernator. Całość dzieje się w USA, gdzie gubernator może ułaskawić skazanego na karę śmierci. Któregoś dnia dla poprawienia sobie nastroju, spośród trzech więźniów gubernator wybrał jednego i  go ułaskawił. O wszystkim dowiedzieli się strażnik i więzień A. </p>
+<p>Strażnik, z racji swojego zawodu dowiedział się który z więźniów został ułaskawiony. Więzień A, starał się wydobyć informację od strażnika, ten jednak nie miał prawa mu jej udzielić. W końcu zgodzili się na następujące rozwiązanie: strażnik poda nazwisko jednego z dwóch pozostałych więźniów, którzy zostaną straceni. Oczywiście gdyby A miał zostać stracony, strażnik tego nie powie - poda nazwisko drugiego z więźniów. </p>
+<p>Strażnik mówi: 'zginie więzień B'.</p>
+<p>Bardzo często opis paradoksu strażnika i więźnia kończy się w tym momencie - dalej pojawia się rozwiązanie. My jednak szczegółowo rozpiszmy co może się stać. Jeżeli ułaskawiony zostanie więzień B, to strażnik powie 'stracony zostanie C', jeżeli ułaskawiony zostanie C, to strażnik powie 'stracony zostanie więzień B', jeżeli ułaskawiony zostanie A, to strażnik rzuci monetę i jeżeli wyjdzie orzeł, to powie 'B', a jeżeli reszka, to powie 'C'. </p>
+<p>Strażnik rozumuje tak: więzień A ma prawdopodobieństwo $\frac{1}{3}$, że zostanie ułaskawiony. Jeden z więźniów B albo C i tak musi zostać stracony, więc tak naprawdę nie udzieliłem A żadnej informacji o tym, czy zostanie ułaskawiony czy nie. </p>
+<p>Więzień A bardzo się cieszy, bo wiedząc, że B zostanie stracony, oblicza sobie, że ma 50% szans na ułaskawienie (zostaje wybór tylko A lub B). Czyli jego zdaniem prawdopodobieństwo ułaskawienia wzrosło od $\frac{1}{3}$ do $\frac{1}{2}$. </p>
+<p>Kto ma rację? Strażnik, uważający, że nie udzielił żadnej informacji, czy więzień A, wierzący, że dzięki uzyskanej wiedzy jest bardziej pewno ułaskawienia.</p>
+<p>Rację ma ... strażnik. Więzień nie uzyskał żadnej informacji i prawdopodobieństwo ułaskawienia nadal wynosi $\frac{1}{3}$.</p>
+<p>Podobnie jak poprzednio, zagadnienie to nazywamy paradoksem tylko dlatego, że większość osób próbujących rozwikłać tę zagadkę przyzna rację więźniowi.</p> 
+<p>Spróbujmy wyjaśnić, dlaczego więzień A nie ma racji.</p> 
+<p>Podstawowym powodem błędu jest fakt, że więzień A założył, że sytuacja opisana powyżej jest równoważna przypadkowi, gdy strażnik po prostu przychodzi i bez żadnych wstępów i warunków mówi: "więzień B nie zostanie ułaskawiony". Prawdopodobieństwo takiego zdarzenia jest po prostu równe 2/3, bo prawdopodobieństwo ułaskawienia wynosi 1/3. W takiej sytuacji faktycznie zarówno więzień A jak i C mafją 50% szans na ułaskawienie. </p>
+<p>Zastanówmy się jednak jakie jest prawdopodobieństwo, że strażnik powie: B zostanie stracony <strong>w sytuacji opisanej powyżej</strong>. Tak się stanie, gdy ułaskawiony zostanie więzień C (z prawdopodobieństwem $\frac{1}{3}$), lub gdy ułaskawiony zostanie więzień A. W przypadku ułaskawienia więźnia A prawdopodobieństwo powiedzenia "więzień B zginie" wynosi połowę  z $\frac{1}{3}$ (czyli $\frac{1}{6}$), gdyż strażnik rzuca monetą, żeby zdecydować czy powiedzieć B czy C. W takim razie prawdopodobieństwo, że strażnik powie "B zostanie stracony" <strong>w sytuacji opisanej powyżej</strong> wynosi $\frac{1}{3}+\frac{1}{6}=\frac{1}{2}$.</p> 
+\<p>Z tych rozważań widać, że sytuacje NIE SĄ SOBIE RÓWNOWAŻNE - $\frac{2}{3}$ nie równa się $\frac{1}{2}$. Czyli już powinniśmy zacząć podejrzewać, że coś z rozumowaniem więźnia A jest nie tak. </p>
+<p>Interesuje nas więc odpowiedź na pytanie "jakie jest prawdopodobieństwo ułaskawienia więźnia A, <strong>jeżeli w powyższej sytuacji strażnik powie, że B zostanie stracony</strong>".</p> 
+<p>Do ostatecznego rozstrzygnięcia problemu posłużmy się modelem. Powiedzmy, że sytuacja taka zaszła 300 razy a prawdopodobieństwo odpowiada proporcji. Możemy oczekiwać, że w 150 przypadkach strażnik powie "więzień B zostanie stracony", gdyż wcześniej wyliczyliśmy, że prawdopodobieństwo wynosi $\frac{1}{2}$. Wiemy też, że prawdopodobieństwo, że strażnik powie "zginie B", jeżeli A zostanie ułaskawiony wynosi 1/6 (patrz wyżej), czyli możemy oczekiwać, że stanie się tak w 50 przypadkach ($\frac{1}{6}\cdot 300$). Prawdopodobieństwo, że A zostanie ułaskawiony gdy strażnik powie "zginie B" możemy oszacować dzieląc 50 (liczba zdarzeń sprzyjających) przez 150 (liczba wszystkich zdarzeń, zgodnych z założeniem, czyli z sytuacją gdy strażnik mówi "zginie B") - 50/150 = 1/3 - dokładnie tak jak na początku. Czyli faktycznie strażnik nie dał więźniowi nowych informacji.</p>
+<p>Zastanówmy się, czy jeżeli prawdopodobieństwo ułaskawienia A wynosi $\frac{1}{3}$, to czy prawdopodobieństwo ułaskawienia C wynosi $1-\frac{1}{3} = \frac{2}{3}$?. Tak! Gdyby więzień A podzielił się wiedzą o tym co powiedział strażnik w zaistniałej sytuacji (czyli gdy strażnik rzucał monetą), to więzień C mógłby mieć $\frac{2}{3}$ pewności, że zostanie ułaskawiony (o ile oczywiście zna statystykę). Obliczmy używając powyższego przykładu. Oczekujemy że strażnik powie "zginie B" w 150 przypadkach - powie tak, gdy C zostanie ułaskawiony,  oczekujemy tego w $\frac{1}{3}\cdot 300$ przypadków, natomiast gdy A zostanie ułaskawiony, to C i tak zginie. Czyli proporcja wynosi $\frac{100}{150} = \frac{2}{3}$. </p>
+<p>Jak poprzednio w problemie Monty Halla diabeł tkwi w szczegółach, a konkretnie w założeniu, że po pierwsze strażnik musi coś odpowiedzieć, po drugie, że nie może dać więźniowi A informacji wprost, czy ten zginie lub nie, a po trzecie w fakcie, że strażnik w pewnym scenariuszu rzuca monetą.</p>
+<p>Gdyby zdjąć te ograniczenia i po prostu założyć, że któregoś dnia strażnik może (nie musi!) przyjść i powiedzieć "B zostanie stracony", to faktycznie prawdopodobieństwo ułaskawienia A wynosiłoby $\frac{1}{2}$, choćby z tego powodu, że w takim scenariuszu A i C nie różnią się od siebie niczym, poza nazwą. W przypadku, który opisujemy, sytuacja więźniów A i C jest zdecydowanie różna.</p> 
+<p>Na koniec przedstawmy ten problem w ujęciu bardziej matematycznym. </p>
+<p>Przyjmimy oznaczenia
+<ul>
+	<li> $P(W)$ prawdopodobieństwo, że strażnik powie "B zostanie stracony"
+	<li> $P(A)$ prawdopodobieństwo, że A zostanie ułaskawiony
+	<li> $P(B)$ i $P(C)$ jak wyżej
+	<li> $P(A|W)$ prawdopodobieństwo, że A zostanie ułaskawiony pod warunkiem, że strażnik powie "B zginie", 
+</ul>
+</p>
+<p>Możemy zbudować następującą tabelę prawdopodobieństw:
+
+ <table class="table">
+ <thead>
+  <tr>
+    <th>Ułaskawiony</th>
+    <th>Strażnik mówi: zginie B</th>
+    <th>Strażnik mówi: zginie C</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>A</td>
+    <td>1/6</td>
+    <td>1/6</td>
+  </tr>
+  <tr>
+    <td>B</td>
+    <td>0</td>
+    <td>1/3</td>
+  </tr>
+  <tr>
+    <td>C</td>
+    <td>1/3</td>
+    <td>0</td>
+  </tr>
+  </tbody>
+</table> 
+Z drugiej kolumny możemy przepisać:
+\[P(W)=\frac{1}{6}+0+\frac{1}{3}=\frac{1}{2}\]
+
+Liczymy prawdopodobieństwo, że A zostanie ułaskawiony pod warunkiem, że strażnik powie "B zginie", 
+
+\[P(A|W)=\frac{P(A\cap W)}{P(W)}=\frac{1/6}{1/2}=\frac{1}{3}\]</p>
+*-*-
+matamatyka
+*-*-
+prawdopodobieństwo warunkowe, twierdzenie Bayesa, paradoks, prawdopodobieństwo
+*-*-
+roznosci
+*-*-
+Różności
+*-*-
+paradoksy
+*-*-
+2
+*-*-
+04/11/2014
+*-*-

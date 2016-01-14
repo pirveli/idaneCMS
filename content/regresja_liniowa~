@@ -1,0 +1,77 @@
+Regresja_liniowa
+*-*-
+regresja_liniowa
+*-*-
+<p><code><strong><span style="color:#696969;">Aby zrozumieć ten rozdział należy zapoznać się z rozdziałem</span><span style="color:#696969;"> <a href="http://idane.pl/node/9#">Podstawy</a></span><span style="color:#696969;">.</span></strong>&nbsp;<br />
+
+<p>Z regresją liniową spotkał się każdy, kto choć otarł się o statystykę - jest to najczęściej i najchętniej używana technika, służąca do modelowania związku pomiędzy dwiema (lub więcej) zmiennymi. No właśnie: modelowania ... </p>
+<p>Ten poważnie brzmiący termin wyraża prosty cel: chcemy opisać o ile zmienia się jedna wielkość przy zmianie drugiej o jednostkę. Czyli na przykład <b>model</b> dla zależności masy ciała od wzrostu mógłby wyglądać następująco: ze zmianą wzrostu o 1 cm masa zwiększa się o 250g. Przyjrzyjmy się bliżej temu modelowi. Druga wielkość, masa ciała, <b>w naszym modelu</b> zależy od pierwszej, czyli od wzrostu. Żeby powiedzieć o ile wzrośnie masa, musimy znać zmianę wzrostu. Z tego powodu wielkość ta nazywa się <b>zmienną zależną</b>. Pierwszą wielkość, czyli wzrost, nazywamy <b>zmienną niezależną</b>. Warto zwrócić uwagę na stwierdzenie, że masa jest zmienną zależną <b>w naszym modelu</b>. Moglibyśmy zapisać inny model, w którym zmienną niezależną byłaby masa, a zmienną zależną wzrost. Z przyczyn matematycznych te modele nie są swoimi prostymi odwrotnościami (typu: jeżeli na 1cm wzrostu masa rośnie o 250 g, to na 1g masy wzrost zmienia się o 1/250 cm - tak nie jest). </p>
+<h2>Historia</h2>
+<p>Nazwa <it>regresja</it> została wprowadzona przez wielkiego Francisa Galtona, którego zaintrygował fakt, że synowie wysokich ojców są średnio niżsi niż ojcowie, a synowie niskich ojców są średnio wyżsi od swoich ojców (przepraszam za wielokrotne powtórzenie słowa <it>ojciec</it>, ale precyzja jest ważniejsza niż styl). Innymi słowy, wzrost synów ojców wyjątkowo wysokich i wyjątkowo niskich jest bliższy średniej z populacji niż wzrost tychże ojców. Galton nazwał to zjawisko <it>regresją do przeciętnej (regression to mediocrity)</it>, a do jego zbadania zbudował aparat pojęciowy i matematyczny, którego używamy do dzisiaj. Osoby bardziej zainteresowane matematyczną stroną statystyki chętnie przeczytają oryginalny tekst, który można znaleźć pod <a href="http://www.jstor.org/discover/10.2307/2841583?uid=3738840&uid=2&uid=4&sid=21104224351823"> tym</a> adresem.</p> 
+<p>W chwili obecnej nie używamy już słowa <it>regresja</it> w takim znaczeniu jak Galton, można nawet powiedzieć, że jest mylące. Z przyczyn historycznych trudno oczekiwać, że zostanie ono zastąpione innym słowem, choć w ostatnich latach coraz większą popularność zdobywa słowo <it>model</it> (np. liniowy, nieliniowy).</p> 
+<h2>Przykład</h2>
+<p>Żeby ilościowo zrozumieć regresję liniową prześledźmy szczegółowo konkretny przykład. Tym razem dla odmiany nie użyjemy przykładu z medycyny, ale z biologii. Załóżmy, że mamy do dyspozycji pomary wysokości i średnicy młodych drzew - dane w formacie Excela można pobrać <a href="../web_documents/drzewa.xls">  tutaj </a> a w formacie csv<a href="../web_documents/drzewa.csv">  tutaj</a>. Zbudujmy model zależności średnicy drzewa od wysokości drzewa - rysunek przedstawiony jest poniżej.</p>
+<img alt="" src="../web_documents/regresja.png" style="float: center; " />
+<p>Po wklejeniu danych do programu znajdującego się na dole strony uzyskamy kilka różnych wyników. Najbardziej interesuje nas <b>współczynnik kierunkowy</b>, króry w naszym przypadku wynosi 0.17. Oznacza to, że przy wzroście wysokości drzewa o 1 cm średnica <b>średnio</b> zwiększy się o 0.17 cm. Liczbę tę nazywamy często <i>współczynnikiem regresji liniowej</i>, lub nachyleniem prostej, gdyż faktycznie osoby mające pewne doświadczenie w algebrze i geometrii rozpoznają w niej współczynnik kierunkowy prostej.</p>
+<p>Warto zwrócić uwagę, że współczynnik regresji może być również ujemny. Na przykład w badaniu zależności liczby włosów na głowie w grupie osób w wieku od 30 do 100 lat moglibyśmy otrzymać wynik -12000/rok, czyli z każdym rokiem liczba włosów <i>spada</i>, co wyrażone jest właśnie ujemnym współczynnikiem regresji.</p>
+<p>Druga liczba dostępna w wynikach działania programu to tzw. Intercept, czyli punkt przecięcia z osią zależnych. Trochę bliżej liczbę tę zinterpretujemy poniżej; tutaj napiszemy jedynie, że tę liczbę musimy dodać do każdego wyniku, który wyliczamy z modelu (patrz poniższe obliczenia).</p>
+<p>Do czego może się nam taki model przydać? Powiedzmy, że interesuje nas jaką w przybliżeniu średnicę ma drzewo o wysokości 30 cm. Wśród naszych danych drzewa o takiej wysokości nie mamy - mamy drzewo o wysokości 27 cm, mamy 33 cm, ale średnicę drzewa o wysokości 30 cm możemy co najwyżej oszacować z modelu. Aby to obliczyć mnożymy 30*0,17 i dodajemy Intercept, czyli 2,19.
+\[
+30\cdot0{,}17+2{,}19 = 7{,}29
+\]
+Czyli nasz model <i>przewiduje</i>, że średnia średnica drzewa o wysokości 30 cm wynosi 7,29 cm. 30 cm jest "wewnątrz (inter)" naszych danych (pomiędzy nimi), więc przewidywanie wartości średnicy w tym przypadku nazywa się <i><b>inter</b>polacją</i>. Jeżeli wartość jest mniejsza lub większa niż pozostałe wartości, czyli jest "poza (extra)" analizowanym przedziałem, to proces nazywa się <i><b>extra</b>polacją</i>. </p>
+<h2>Statystyka</h2>
+<p>Gdyby przyjrzeć się technicznej/matematycznej stronie regresji liniowej (czego oczywiście robić nie będziemy), to okaże się, że obliczenia wykonane do tej pory nie miały nic wspólnego ze statystyką, czyli z metodologią opisaną w rozdziale <a href="http://idane.pl/node/9#">Podstawy</a> - były to czyste obliczenia numeryczne. </p>
+<p>Żeby zacząć obliczenia <i>statystyczne</i> musimy zdefiniować <a href="http://idane.pl/node/9#H0">hipotezę zerową</a> oraz przeprowadzić test statstyczny w celu jej odrzucenia.</p> 
+<p><a href="http://idane.pl/node/9#H0">Hipotezą zerową</a> w naszym przypadku jest: współczynnik regresji nie jest istotnie różny od zera, czyli ze zmianą zmiennej niezależnej <b>nic</b> nie dzieje się ze zmienną zależną. Dodatkowo (i w związku z tym), linia regresji jest "płaska" - nie idzie istotnie ani do góry, ani w dół. Przypadek taki przedstawiony jest na rysunku 2.</p> 
+<p>Dlaczego za każdym razem napisałem "istotnie różny"? Ponieważ zwykle przypadek sprawia, że wyliczony współczynnik jest różny od zera - jest albo trochę powyżej zera, albo trochę poniżej. Zadaniem naszego testu statystycznego jest stwierdzenie, czy ta różnica jest istotna, czy może można przyjąć, że w praktyce wynik jest po prostu zerem.</p> 
+<p>W naszym przykładzie otrzymaliśmy wynik <i>p</i>=0,003374, czyli uzyskany współczynnik regresji (0,17) jest istotnie statystycznie różny od zera.</p> 
+<h2>Uwagi o stosowalności regresji liniowej</h2> 
+<p>Na koniec, zanim przejdziemy do programu statystycznego, przedyskutujemy krótko stosowalność regresji liniowej, czyli warunki, w których stosowanie regresji liniowej, a być może co ważniejsze, interpretowanie uzyskanej wartości <i>p</i> ma sens. 
+<ul>
+<li> Zmienna zależna musi mieć rozkład normalny. Warunek ten nie jest wcale tak oczywisty, na jaki wygląda. Tak naprawdę chodzi o to, żeby po odjeciu modelu od uzyskanych wartości otrzymać rozkład normalny. W praktyce warto zastanowić się, czy naszym zdaniem rozkład normalny ma sens w badanym przypadku i jeżeli odpowiedź brzmi "tak", zastosować po prostu regresję liniową. 
+<li> Nie można zbytnio ekstrapolować wyniku modelu. Jeżeli przeprowadzimy analizę przy pomocy regresji liniowej np. zależności wzrost od wieku, to ekstrapolowanie wyników uzyskanych dla przedziału wiekowego, powiedzmy 10-15 lat, do wieku 60 lat może nam dać wzrost rzędu kilometra. Jest to oczywiście bez sensu i wynika z nieuprawnionego założenia, że dynamika wzrostu od 15 do 60 roku życia nie różni się niczym od dynamiki w analizowanym przedziale. Nieuprawnione ekstrapolacje są częste w środkach masowego przekazu i w polityce - świetnie nadają się do straszenia lub napędzania koniunktury. Bardzo dobrym przykładem są artykuły w prasie nakręcające Polaków do kupowania nieruchomości przed krachem roku 2009. Przewidywano wtedy ile będą kosztowały nieruchomości z 5 lat i argumentowano, że jeżeli teraz się czegoś nie kupi, to za niedługo ceny dojdą do takiej wartości, że nigdy nie będzie nas stać na mieszkanie. Rzeczywistość szybko zweryfikowała tę nieuprawnioną ekstrapolację.
+</ul>
+Poniżej zamieszczam program statystyczny do obliczania parametrów regresji liniowej i rysowania jej wyniku. </p>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  Jeżeli przydał Ci się ten rozdział, podziel się z innymi! 
+ <a class="a2a_button_facebook"></a>    <a class="a2a_button_twitter"></a>   <a class="a2a_button_google_plus"></a>   <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+</div>
+<div align="left">
+<h1>UWAGA!</h1>
+<p>Z powodu <strong>bardzo</strong> dużej liczby osób wykonujących obliczenia przy pomocy udostępnionych programów przeglądarkowych, co pociągało za sobą okresowe duże obciążenie serwera, jestem niestety zmuszony wyłączyć programy na idane.pl. </p>
+
+<p>Jednak <strong>NADAL MOŻNA ICH UŻYWAĆ ZA DARMO</strong> w znacznie ulepszonej postaci, oraz wielu innych programów, tutaj: <a href="https://statystyka.plgrid.pl">https://statystyka.plgrid.pl</a>. </p>
+
+<p> Usługa udostępniana jest polskim naukowcom przez Poznańskie Centrum Komputerowo Sieciowe w ramach projektu pl.grid. Używanie oprogramowania wymaga uzyskania (darmowego) konta - jak to zrobić, opisuję poniżej.</p>
+
+<p>Najlepiej zarejestrować się jako zwykły użytkownik. Jeżeli ktoś nie ma OPI, to może użyć mojego: 117253 i napisać, że jest się z mojej grupy badawczej.</p>
+
+<p> W ogóle WARTO REJESTROWAĆ SIĘ JAKO CZŁONEK GRUPY BADAWCZEJ OSOBY, KTÓRA JUŻ JEST W PLGRIDZIE (czyli np. mojej) NAWET JEŻELI SIĘ MA OPI, BO WTEDY CAŁA PROCEDURA JEST BARDZO SZYBKA I NIE TRZEBA CZEKAĆ NA KONTO. Potem można zmienić to w HelpDesku.</p>
+
+<p>Jeżeli chodzi o pozostałe pola, to właściwie można wpisać właściwie cokolwiek.</p>
+
+<p>W przyszłości zostanie wprowadzona kategoria "lekki użytkownik", gdzie będzie się podawało tylko imię, nazwisko i miejsce pracy i automatycznie uzyska się dostęp do naszego oprogramowania.</p>
+
+<p>Po uzyskaniu konta plgrid należy przejść do usługi: https://statystyka.plgrid.pl/ i się zalogować, system zapyta, czy aplikują o usługę i należy odpowiedzieć, że tak.</p>
+
+<p>Tutaj są filmy instruktażowe jak używać serwisu:</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/rsad.mp4"> Film 1: Wprowadzenie</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/ttest.mp4"> Film 2: Test T</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/survival.mp4"> Film 3: Analiza przeżycia</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/dodawanie_aplikacji.mp4"> Film 4: Dodawanie własnej aplikacji</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/acf.mp4"> Film 5: Time series</a></li>
+</ul>
+</div>
+*-*-
+book
+*-*-
+podstawy, wartość p, populacja, próba
+*-*-
+book
+*-*-
+minipodrecznik
+*-*-
+2
+*-*-

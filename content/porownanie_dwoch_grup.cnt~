@@ -1,0 +1,85 @@
+Porównanie dwóch grup
+*-*-
+porownanie_dwoch_grup
+*-*-
+<p><code><strong><span style="color:#696969;">Aby zrozumieć ten rozdział należy zapoznać się z rozdziałem</span><span style="color:#696969;"> <a href="http://idane.pl/node/9#">Podstawy</a></span><span style="color:#696969;">.</span></strong>&nbsp;<br />
+	<strong><font color="#696969">Warto r&oacute;wnież zapoznać się z rozdziałem <a href="http://idane.pl/node/10">Testy rozkładu</a></font></strong></code></p>
+<p>Jednym z najczęstszych zadań statystycznych jest stwierdzenie, czy dwie grupy się różnią. Możemy na przykład zapytać, czy ciśnienie tętnicze w grupie 100 osób z chorobą wieńcową jest wyższe niż u 100 osób zdrowych (nie jest to zbyt ambitne zadanie), lub czy dzieci z rodzin o dochodzie poniżej 1000 zł na osobę mają lepszą średnią ocen niż dzieci z rodzin o wyższym dochodzie.</p>
+<h2> Test <em>t</em></h2>
+<p> Na początku musimy odpowiedzieć sobie na pytanie, co porównujemy i w jaki sposób. Okazuje się, że najczęściej używanym testem jest test <em>t</em>, który porównuje <em>średnie</em>  porównuje się średnie w obu grupach. Szczegóły matematyczne tego testu nie są dla nas interesujące, poza dwiema informacjami: po pierwsze test <em>t</em> wymaga, aby rozkład danych był normalny, po drugie test ten bierze pod uwagę odchylenia standardowe w obu grupach. Pierwsza informacja wpływa na sposób w jaki analizujemy dane - druga niekoniecznie. </p>
+<p> Jeżeli chcemy więc porównać dwie grupy, zaczynamy od sprawdzenia rozkładu w obu grupach. Może się tak zdarzyć, że już przed przystąpieniem do porównywania wiemy, że jakaś zmienna ma (lub nie) rozkład normalny. Wtedy po prostu stosujemy (lub nie) test <em>t</em>. Jeżeli nie mamy tej wiedzy, to sprawdzamy rozkład danych, na przykład przy pomocy technik opisanych w rozdziale <a href="http://idane.pl/node/10"> Testy Rozkładu</a>.</p>
+<p> Przeanalizujmy dane pochodzące z badań nad anoreksją u młodych kobiet. W badaniu porównywano efekty <em>kognitywnej terapii behawioralnej</em> (CBT - Cognitive Behavioral Treatment) i  <em>terapii rodzin</em> (FT - Family Treatment) w leczeniu tej choroby. Jedną z grup badawczych, oprócz CBT i FT, była grupa kontrolna, w której nie prowadzono żadnej terapii. Masy pacjentek zmierzono po raz pierwszy przed rozpoczęciem terapii a po raz drugi po ich zakończeniu.</p>
+<p> Na początek porównajmy masy grupy kontrolnej i grupy CBT przed przystąpieniem do badania. Dane dla grupy kontrolnej można pobrać <a href="../web_documents/daneCont.xls"> tutaj </a>(w formacie Excela) lub <a href="../web_documents/daneCont.csv"> tutaj</a> (w formacie csv) a dla grupy CBT <a href="../web_documents/daneCBT.xls"> tutaj</a> (Excel) lub <a href="../web_documents/daneCBT.csv">tutaj</a> (csv).</p>
+<p><img alt="" src="/static/boxploty1.jpg" class="imp-responsive center-block"> Graficznie dane można zaprezentować na przykład tak jak na rysunku obok przy użyciu wykresów typu <em>boxplot</em>. Tłumacząc wprost na polski - pudełko-z-wąsami, a mówiąc bardziej serio, <em>wykres pudełkowy</em> lub <em>wykres skrzynkowy</em>. Ta technika graficzna jest intuicyjnie zrozumiała, a jej szczegóły opisane są w dodatku I - Podstawowe Techniki Graficzne (niegotowe... przyp. autora). </p>
+<p> Załadowanie danych do programu przeglądarkowego t.test umieszczonego na dole strony (lub do innego programu statystycznego) daje w wyniku wartość <strong>p</strong>=0,4343. W teście hipotezą zerową jest "te dane nie różnią się od siebie", a wartość <strong>p</strong>&gt;0,05 oznacza, że nie mamy wystarczających powodów, aby ją odrzucić. Będziemy więc traktowali obie grupy jako takie same. </p>
+<p><img alt="" src="/static/boxploty2.jpg" class="img-responsive center-block"> Sprawdziliśmy, że grupa w której przeprowadzono terapię CBT i grupa kontrolna nie różnią się na początku badania. Sprawdźmy więc, czy różnią się po jego zakończeniu. Rysunek przedstawiono obok, po lewej stronie. Z samego rysunku widać, że masa dziewcząt poddanych terapii wyraźnie wzrosła, a test <em>t</em> tylko to potwierdza, dając w rezultacie wartość <strong>p</strong>=0,0147. Otrzymany wynik <strong>p</strong>&lt;0,05 sprawia, że odrzucamy hipotezę zerową i uznajemy, że grupy się różnią - z wykresu widzimy, że grupa CBT przyjmuje wyższe wartości. </p>
+<h2> Sparowany test <em>t</em></h2>
+Najciekawszym pytaniem w analizowanych danych jest jednak nie to, czy grupy kontrolna i leczona CBT różnią się na końcu badania, tylko czy osoby z grupy leczonej przy pomocy CBT przybrały na wadze. Moglibyśmy zrobić to samo co poprzednio, czyli wrzucić dane z grupy CBT przed terapią i po terapii do programu obliczającego test <em>t</em> w dokładnie taki sam sposób jak w poprzednim paragrafie. Postępując w ten sposób zignorowalibyśmy jednak bardzo ważną informację, a mianowicie, że zarówno przed jak i po terapii mamy do czynienia <em> z tymi samymi osobami</em>. <strong>Ignorowanie dostępnych informacji jest jednym z podstawowych <em>grzechów statystycznych</em></strong>. Grzeszyć nie chcemy, więc użyjemy wersji testu <em>t</em>, która &bdquo;wie&rdquo;, że dane są <em>sparowane</em>. Testu tego możemy użyć, gdy w obu grupach mamy te same osoby, lub gdy przypadki w obu grupach zostały celowo dobrane w pary, na przykład ze względu na wiek, przebieg choroby czy dane antropometryczne.</p>
+<p><img alt="" src="/static/boxploty3.jpg" class="img-responsive center-block"> W naszym przypadku rysunek pokazuje, że po zastosowaniu terapii masa ciała wzrasta.Jeżeli zastosujemy niesparowany test <em>t</em>, <em>t</em> wartość <strong>p</strong>=0,1005, czyli zgodnie z przyjętą zasadą powinniśmy przyjąć, że terapia nie dała żadnego efektu. Jednak gdy wykorzystamy pełną dostępną informację, czyli użyjemy testu sparowanego, uzyskamy wartość <strong>p</strong>=0,0350. Test potwierdza to co widzimy gołym okiem na rysunku - terapia przyniosła efekty. Niesparowany test <em>t</em> &bdquo;nie widzi&rdquo; tego wyniku najprawdopodobniej z powodu dużej zmienności oraz małej liczebności grupy.</p>
+<p>Powyższe obliczenia można powtórzyć przy pomocy programu zamieszczonego na dole tej strony zaznaczając i odznaczając pole &bdquo;test sparowany&rdquo;.</p>
+<h2>Gdy dane nie są normalne - test Wilcoxona</h2>
+W przypadku każdego z powyższych testów powinniśmy zacząć od sprawdzenia normalności rozkładu danych, tak jak przedyskutowano i zademonstrowano to w rozdziale <a href="http://idane.pl/node/10">Testy rozkładu</a>. Dla wszystkich danych analizowanych do tej pory otrzymujemy wynik, że dane możemy traktować jako pochodzące z rozkładu normalnego. Zainteresowany Czytelnik może sprawdzić to stwierdzenie zapoznając się z rozdziałem <a href="http://idane.pl/node/10">Testy rozkładu</a> i stosując program tam zamieszczony do przetestowania danych z tego rozdziału. Co jednak zrobić, gdy okaże się, że dane nie mają rozkładu normalnego?</p>
+<p> W takim przypadku powinniśmy zastosować nieparametryczny test Wilcoxona. Test ten porównuje mediany a nie średnie, ale dla zastosowania go w praktyce nie ma to znaczenia poza momentem gdy opisujemy wyniki naszych analiz np. w artykule naukowym. Test Wilcoxona nie zakłada rozkładu normalnego (ani żadnego innego)<a href="#fn1" class="footnoteRef" id="fnref1">1</a></sup>, dlatego można go zastosować, gdy dane nie mają <a href="http://idane.pl/node/9#rozkladnormalny">Gaussa</a>. Mamy tutaj jednak do czynienia z typowym przypadkiem &bdquo;coś za coś&rdquo;: test można zastosować w większej liczbie przypadków, jednak jest on zdecydowanie mniej czuły niż test <em>t</em>, więc częściej można &bdquo;nie zauważyć&rdquo; efektu. Test Wilcoxona również może być niesparowany i sparowany, co znajduje swoje odzwierciedlenie w programie na dole strony. Zachęcam Czytelnika do powtórzenia wszystkich obliczeń w tym rozdziale przy zastosowaniu testu Wilcoxona w miejsce testu <em>t</em>.</p>
+<p> Dodajmy jeszcze, że jak już wspomnieliśmy, niewykorzystanie pełnej dostępnej informacji <strong>jest grzechem statystycznym</strong>. W związku z tym, w sytuacji gdy wiemy, że dane mają <a href="http://idane.pl/node/9#rozkladnormalny">rozkład normalny</a>, nie powinniśmy stosować testu Wilcoxona.</p>
+<h2> Testy dwustronne i jednostronne</h2>
+W analizach z tego rozdziału zawsze interesowało nas, czy coś jest większe od czegoś innego - konkretnie, czy masa ciała po zastosowaniu terapii jest większa niż przed. Testy statystyczne, które przeprowadzaliśmy dawały nam odpowiedź na pytanie tylko czy dane grupy się różnią, a nie czy któraś z nich jest większa. Innymi słowy, jeżeli sprawdzamy, czy masa po terapii zwiększyła się, to test da nam pozytywną odpowiedź zarówno w przypadku gdy masa istotnie się zwiększyła jak i w przypadku gdy istotnie się zmniejszyła. Test taki nazywamy testem dwustronnym. W naszym przypadku, to które wyniki są większe odczytywaliśmy z rysunku. Można jednak przeprowadzić tak zwany <em>test jednostronny</em>, w którym od razu pytamy, czy wartości w wybranej grupie (np. po zakończeniu terapii) są <em>większa</em>, a nie czy jest po prostu różne. Ponieważ jest to jedyny przypadek w którym spotykamy się z testem jednostronnym w tym podręczniku, nie będziemy dale zgłębiać tematu. Zainteresowany Czytelnik może pogłębić swoją wiedzę przy pomocy bardziej zaawansowanych źródeł. </p>
+<h2> Ostatnia uwaga</h2>
+Zdarzyło mi się, że przekonywano mnie z żarliwością lepszej sprawy, że w sytuacji, gdy porównywane grupy nie mają rozkładu normalnego, należy użyć testu Manna-Whitneya, a nie &bdquo;jakiegoś Wilcoxona&rdquo;. Otóż oba testy, mimo że używają innej terminologii, są sobie całkowicie równoważne i wartości <strong>p</strong> są zawsze takie same dla tych samych danych. 
+<h2>Program statystyczny: test <em>t</em> i test Wilcoxona</h2>
+Poniżej zamieszczony program służy testowania równości <em>dwóch</em> średnich (dla testu <em>t</em>) i median (dla testu Wilcoxona). Dla porównywanych zbiorów rysowane są wykresy typu &bdquo;pudełko-z-wąsami&rdquo;. Aby z niego skorzystać wpisujemy dane w dwa pierwsze pola (pierwsza zmienna w pierwsze pole, druga w drugie), oddzielając  liczby spacjami (można używać zarówno kropki jak i przecinka dziesiętnego: można wpisać zarówno 1,1 jak i 1.1) lub wklejamy dane z Excela bądź LibreOffice (OpenOffice) - <a href="http://idane.pl/content/program-test-t-i-test-wilcoxona">ten diagram</a> demonstruje jak to zrobić. W następne dwa pola wpisujemy nazwy zmiennych (np. &bdquo;grupa badana&rdquo; oraz &bdquo;grupa kontrolna&rdquo;), który pojawią się na osi <em>x</em> W kolejnym  polu podajemy nazwę osi <em>y</em> (np. &bdquo;masa ciała (kg)&rdquo;). Potem wybieramy tylko kolor punktów na wykresie i gotowe. Pod wykresem znaleźć można wartości <strong>p</strong> dla wybranego testu. Dla purystów statystycznych dodamy, że poniższy program używa poprawki Welcha, więc wariancje nie muszą być równe.</p>
+
+<div class="footnotes">
+<hr />
+<ol>
+  <li id="fn1"><p>test Wilcoxona nakłada pewne warunki na <em>kształt</em> rozkładu, np. rozkład powinien być mniej więcej symetryczny, ale tak jak w innych podobnych przypadkach, nie będziemy szczegółowo omawiać tego problem<a href="#fnref1">↩</a></p></li>
+</ol>
+</div>
+
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  Jeżeli przydał Ci się ten rozdział, podziel się z innymi! 
+ <a class="a2a_button_facebook"></a>    <a class="a2a_button_twitter"></a>   <a class="a2a_button_google_plus"></a>  <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+</div>
+
+
+<div align="left">
+<h1>UWAGA!</h1>
+<p>Z powodu <strong>bardzo</strong> dużej liczby osób wykonujących obliczenia przy pomocy udostępnionych programów przeglądarkowych, co pociągało za sobą okresowe duże obciążenie serwera, jestem niestety zmuszony wyłączyć programy na idane.pl. </p>
+
+<p>Jednak <strong>NADAL MOŻNA ICH UŻYWAĆ ZA DARMO</strong> w znacznie ulepszonej postaci, oraz wielu innych programów, tutaj: <a href="https://statystyka.plgrid.pl">https://statystyka.plgrid.pl</a>. </p>
+
+<p> Usługa udostępniana jest polskim naukowcom przez Poznańskie Centrum Komputerowo Sieciowe w ramach projektu pl.grid. Używanie oprogramowania wymaga uzyskania (darmowego) konta - jak to zrobić, opisuję poniżej.</p>
+
+<p>Najlepiej zarejestrować się jako zwykły użytkownik. Jeżeli ktoś nie ma OPI, to może użyć mojego: 117253 i napisać, że jest się z mojej grupy badawczej.</p>
+
+<p> W ogóle WARTO REJESTROWAĆ SIĘ JAKO CZŁONEK GRUPY BADAWCZEJ OSOBY, KTÓRA JUŻ JEST W PLGRIDZIE (czyli np. mojej) NAWET JEŻELI SIĘ MA OPI, BO WTEDY CAŁA PROCEDURA JEST BARDZO SZYBKA I NIE TRZEBA CZEKAĆ NA KONTO. Potem można zmienić to w HelpDesku.</p>
+
+<p>Jeżeli chodzi o pozostałe pola, to właściwie można wpisać właściwie cokolwiek.</p>
+
+<p>W przyszłości zostanie wprowadzona kategoria "lekki użytkownik", gdzie będzie się podawało tylko imię, nazwisko i miejsce pracy i automatycznie uzyska się dostęp do naszego oprogramowania.</p>
+
+<p>Po uzyskaniu konta plgrid należy przejść do usługi: https://statystyka.plgrid.pl/ i się zalogować, system zapyta, czy aplikują o usługę i należy odpowiedzieć, że tak.</p>
+
+<p>Tutaj są filmy instruktażowe jak używać serwisu:</p>
+<ul class="list-group">
+<li class="list-group-item"><a href="https://dl.dropboxusercontent.com/u/10220002/rsad.mp4"> Film 1: Wprowadzenie</a></li>
+<li class="list-group-item"><a href="https://dl.dropboxusercontent.com/u/10220002/ttest.mp4"> Film 2: Test T</a></li>
+<li class="list-group-item"><a href="https://dl.dropboxusercontent.com/u/10220002/survival.mp4"> Film 3: Analiza przeżycia</a></li>
+<li class="list-group-item"><a href="https://dl.dropboxusercontent.com/u/10220002/dodawanie_aplikacji.mp4"> Film 4: Dodawanie własnej aplikacji</a></li>
+<li class="list-group-item"><a href="https://dl.dropboxusercontent.com/u/10220002/acf.mp4"> Film 5: Time series</a></li>
+</ul>
+</div>
+*-*-
+statystyka
+*-*-
+test t, porównania, test parametryczny, test nieparametryczny, test Wilcoxona, test Mana-Whitney'a
+*-*-
+book
+*-*-
+Minipodręcznik biostatystyki
+*-*-
+minipodrecznik
+*-*-
+50
+*-*-
+09/09/2013
+*-*-

@@ -1,0 +1,69 @@
+Korelacje
+*-*-
+korelacje
+*-*-
+<p><code>Aby zrozumieć ten rozdział należy zapoznać się z rozdziałem</span><a href="http://idane.pl/node/9#">Podstawy</a></code><br/>
+<p> Korelacje to chyba jedna z najczęściej wykorzystywanych technik statystycznych. Korelacja opisuje siłę i typ związku pomiędzy dwiema zmiennymi. Siła związku opisywana jest pewną liczbą (do której zaraz wrócimy), a typ opisywany jest słowem "dodatnia" lub "ujemna" (nazywane również "pozytywna" i "negatywna")
+, albo znakiem + lub -. Na przykład pomiędzy wzrostem i masą ciała istnieje dodatnia korelacja: im większy wzrost tym większa masa. Oczywiście nie zawsze będzie tak, że wyższa osoba będzie ważyła więcej, jednak ogólnie, dla dużej grupy ludzi, obserwacja ta będzie prawdziwa. </p>
+<p> Liczbą, która opisuje jednocześnie siłę i typ korelacji jest współczynnik korelacji oznaczany często literą <em>r</em>. Dla każdej pary zmiennych (takich jak na przykład wzrost i masa) liczba ta zawiera się pomiędzy -1 a +1. Znak współczynnika korelacji (+/-) odpowiada typowi korelacji (dodatnia/ujemna), a jego wartość bezwzględna opisuje siłę związku - im bliżej jedynki tym silniejsza korelacja.</p>
+<p>Na przykład w pewnej grupie ludzi współczynnik korelacji pomiędzy ich wzrostem a masą wyniósł <em>r</em>=0.8. Oznacza to, że związek pomiędzy masą a wzrostem był pozytywny (jak wyżej) i dość silny.</p>
+<h2>Korelacja Pearsona i korelacja Spearmana</h2>
+<p>W powszechnym użyciu są trzy typy korelacji: wg. Pearsona, Spearmana i Kendalla. Pierwszy typ jest używany najczęściej, trzeci najrzadziej. Współczynnik korelacji Pearsona mierzy siłę <b>liniowego</b> związku pomiędzy zmiennymi. Liniowy związek to taki, w którym punkty na wykresie rozproszeniowym dwóch badanych zmiennych układają się mniej więcej na linii prostej. Na rysunku poniżej zobaczyć możemy przykłady związku liniowego i nieliniowego.</p>
+<img alt="" src="/static/korelacje.jpg" class="img-responsive center-block" >
+<p>Zignorujmy na razie napisy wewnątrz rysunków i skupmy się na wzorze, w jaki układają się dane. W panelach A) i B) widać, że ze wzrostem <strong>x</strong> rośnie <strong>y</strong> i odwrotnie, gdy <strong>x</strong> maleje, maleje również <strong>y</strong>. W przypadku tych dwóch paneli korelacja jest <strong>dodatnia</strong>. </p>
+<p>W przypadku paneli C) i D) gdy <strong>x</strong> rośnie, <strong>y</strong> maleje i odwrotnie, gdy <strong>x</strong> rośnie, <strong>y</strong> maleje. Korelacja jest <strong>ujemna</strong>. </p>
+<p>Inną cechą widoczną na rysunkach A) i C) jest <strong>liniowość</strong> związku. Jak widać punkty układają się mniej więcej wzdłuż prostej, czego nie można powiedzieć o punktach na panelach B) i D). O zależności przedstawionej na rysunkach A) i C) powiemy, że są to zależności liniowe. Zależności na rysunkach C) i D) są nieliniowe. Aby zbadać siłę <strong>liniowego związku</strong> używamy techniki <strong>korelacji Pearsona</strong>. Badając zależności nieliniowe, użyjemy <strong>korelacji Separmana</strong> (ewentualnie Kendalla). Wynikiem uzyskanym z analizy siły związku metodą korelacji Pearsona jest wartość <strong>r</strong>, która może przyjmować wartości dodatnie (korelacja dodatnia) i ujemne (korelacja ujemna). Im wyższa dodatnia wartość <strong>r</strong>, tym silniejszy jest związek dodatni. Im niższa wartość tym <em>silniejszy</em> jest związek ujemny. Wartości w okolicach zera oznaczają zazwyczaj brak związku. Dokładnie to samo powiedzieć można o korelacji Spearmana, z tym że parametrem opisującym siłę związku jest tutaj  &#961;  (rho), przyjmujące wartości pomiędzy -1 a +1 (identycznie jak <strong>r</strong>).</p>
+<p> W tym miejscu warto poczynić następującą uwagę: Dane, dla których korelacja Pearsona jest bliska 1 bądź -1 układają się w wyraźną linię prostą. W przypadku korelacji Spearmana bliskiej 1 lub -1 dane układają się wzdłuż pewnej rosnącej lub malejącej krzywej. W przypadku obu typów korelacji, wartość bliska 0 oznacza, że dane rozkładają się w chmurę o nieokreślonym kształcie. </p>
+<h2>Testy statystyczne dla korelacji</h2> 
+Do tej pory zajmowaliśmy się kierunkiem i siłą związku. W tym momencie chcielibyśmy przetestować nasze wyniki, czyli powiedzieć, na ile są one istotne statystycznie. Zacząć musimy oczywiście od postawienia pewnej <a href="http://idane.pl/node/9#H0">hipotezy zerowej</a>, którą będziemy w stanie odrzucić. Naszą hipotezą jest "zmienne nie mają ze sobą żadnego związku i współczynnik korelacji (r lub &#961;) jest równy 0". Oczywiście dla realnych danych zawsze z obliczeń praktycznie zawsze otrzymamy wynik różny od zera, a nasz test pozwoli nam powiedzieć, czy dla tych danych, którymi się posługujemy różnica ta jest wystarczająco duża, aby móc przyjąć, że obserwowany związek jest prawdziwy i nie jest jedynie kwestią przypadku. Oczywiście, mając w pamięci dyskusję w rozdziale <a href="http://idane.pl/node/9">Podstawy</a> słowo "prawdziwy" bierzemy w duży cudzysłów. </p>
+<p>W przypadku obu typów korelacji mamy do dyspozycji testy statystyczne, choć nie mają one konkretnych nazw, tak jak np. test t czy ANOVA - po prostu test istotności korelacji Pearsona lub test istotności korelacji Spearmana (choć gdybyśmy poszukali głębiej, to znaleźlibyśmy konkretne nazwy tych testów). Podobnie jak poprzednio, jeżeli wartość <em>p</em> uzyskana w tym teście jest mniejsza niż pewna z góry przyjęta wartość (standardowo 0.05), to odrzucamy hipotezę zerową. Przypomnijmy, że w naszym przypadku hipoteza zerowa (H0), to "nie ma związku pomiędzy zmiennymi", więc odrzucamy stwierdzenie o braku związku i przyjmujemy, że związek taki istniej. Jeżeli p>0.05 to przyjmujemy, że nie mamy podstaw do odrzucenia H0 i stwierdzamy, że pomiędzy zmiennymi nie ma związku. </p>
+<p> Przeanalizujmy następujący przyład. Wszystkich nas interesuje, czy większa głowa oznacza tęższy umysł.W 1991 roku sprawdzono, czy wielkość mózgu (zmierzona przy pomocy techniki MRI) ma związek z inteligencją - pełną analizę można znaleźć <a href="http://www.sciencedirect.com/science/article/pii/0160289691900318">tutaj</a>. Wielkość mózgu mierzona była przez liczbę niezerowych pikseli na obrazach MRI. W <a href="../web_documents/dane.m.csv">tym pliku</a> znaleźć można dane dotyczące 20 mężczyzn biorących udział w badaniu w formacie csv (plik Excela znajduje się <a href="../web_documents/dane.m.xls">tutaj</a>). Dane analizujemy przy pomocy wybranego programu statystycznego (na przykład tego, który znajduje się na dole tej strony) i dla korelacji Pearsona otrzymujemy r=0.50 przy <em>p</em>=0.025, a dla korelacji Spearmana &#961;=0.62 przy <em>p</em>=0.003. Jak widać korelacja Spearmana jest silniejsza i wartość <em>p</em> w tym rodzaju korelacji jest mniejsza - nie jest to dziwne, biorąc pod uwagę kształt wykresu (patrz poniżej - program statystyczny).</p>
+<p>Wyniki te moglibyśmy analizować dalej i poddać interpretacji, ale w tym (mini) podręczniku poprzestaniemy na stwierdzeniu, że w omawianym badaniu stwierdzono dodatni związek pomiędzy wielkością mózgu, a współczynnikiem inteligencji. </p>
+<h2>Program statystyczny: korelacje Pearsona i Spearmana</h2>
+Poniższy program rysuje wykres zależności dwóch zmiennych i oblicza współczynnik korelacji. W pierwszym polu zaznaczamy, czy chodzi nam korelację Pearsona czy Spearmana. W następnym polu wklejamy lub wpisujemy dane, które odkładane będą na osi <em>x</em> (czyli np. wielkość mózgu) , a w kolejnym dane, które odkładane będą na osi <em>y</em> (czyli np. wynik testu inteligencji). Można używać zarówno kropki jak i przecinka dziesiętnego: można wpisać zarówno 1,1 jak i 1.1. Ten diagram opisuje proces przeklejania danych z Excela lub LibreOffice (OpenOffice). W kolejnym polu wpisujemy opis osi x i y. Na koniec wybieramy kolor punktów na wykresie.</p>
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+  Jeżeli przydał Ci się ten rozdział, podziel się z innymi! 
+ <a class="a2a_button_facebook"></a>    <a class="a2a_button_twitter"></a>   <a class="a2a_button_google_plus"></a> <a class="a2a_dd" href="http://www.addtoany.com/share_save"></a>
+</div>
+<div align="left">
+<h1>UWAGA!</h1>
+<p>Z powodu <strong>bardzo</strong> dużej liczby osób wykonujących obliczenia przy pomocy udostępnionych programów przeglądarkowych, co pociągało za sobą okresowe duże obciążenie serwera, jestem niestety zmuszony wyłączyć programy na idane.pl. </p>
+
+<p>Jednak <strong>NADAL MOŻNA ICH UŻYWAĆ ZA DARMO</strong> w znacznie ulepszonej postaci, oraz wielu innych programów, tutaj: <a href="https://statystyka.plgrid.pl">https://statystyka.plgrid.pl</a>. </p>
+
+<p> Usługa udostępniana jest polskim naukowcom przez Poznańskie Centrum Komputerowo Sieciowe w ramach projektu pl.grid. Używanie oprogramowania wymaga uzyskania (darmowego) konta - jak to zrobić, opisuję poniżej.</p>
+
+<p>Najlepiej zarejestrować się jako zwykły użytkownik. Jeżeli ktoś nie ma OPI, to może użyć mojego: 117253 i napisać, że jest się z mojej grupy badawczej.</p>
+
+<p> W ogóle WARTO REJESTROWAĆ SIĘ JAKO CZŁONEK GRUPY BADAWCZEJ OSOBY, KTÓRA JUŻ JEST W PLGRIDZIE (czyli np. mojej) NAWET JEŻELI SIĘ MA OPI, BO WTEDY CAŁA PROCEDURA JEST BARDZO SZYBKA I NIE TRZEBA CZEKAĆ NA KONTO. Potem można zmienić to w HelpDesku.</p>
+
+<p>Jeżeli chodzi o pozostałe pola, to właściwie można wpisać właściwie cokolwiek.</p>
+
+<p>W przyszłości zostanie wprowadzona kategoria "lekki użytkownik", gdzie będzie się podawało tylko imię, nazwisko i miejsce pracy i automatycznie uzyska się dostęp do naszego oprogramowania.</p>
+
+<p>Po uzyskaniu konta plgrid należy przejść do usługi: https://statystyka.plgrid.pl/ i się zalogować, system zapyta, czy aplikują o usługę i należy odpowiedzieć, że tak.</p>
+
+<p>Tutaj są filmy instruktażowe jak używać serwisu:</p>
+<ul>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/rsad.mp4"> Film 1: Wprowadzenie</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/ttest.mp4"> Film 2: Test T</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/survival.mp4"> Film 3: Analiza przeżycia</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/dodawanie_aplikacji.mp4"> Film 4: Dodawanie własnej aplikacji</a></li>
+<li><a href="https://dl.dropboxusercontent.com/u/10220002/acf.mp4"> Film 5: Time series</a></li>
+</ul>
+</div>
+*-*-
+statystyka
+*-*-
+korelacje, korelacja, związki, test statystyczny
+*-*-
+book
+*-*-
+Minipodręcznik biostatystyki
+*-*-
+minipodrecznik
+*-*-
+70
+*-*-
+03/11/2013
+*-*-

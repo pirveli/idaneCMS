@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% extends "bootstrap/base.html" %}
+     {% block head %}
+    {{ super() }}
+    {{ moment.include_jquery() }}
+    {{ moment.include_moment() }}
+    {{ moment.lang("pl") }}
+    <link rel="stylesheet" type="text/css" href="/static/idaneCMS.css">
+    {% endblock %}
+    <link rel="stylesheet" type="text/css" href="/static/idaneCMS.css">
+  </head>
+  </body>
+{% block title %} idane.pl {% endblock %}
+{% block navbar %}
+<nav role="navigation" class="navbar navbar-fixed-top navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle"  data-toggle="collapse" data-target="#navbarCollapse">
+	<span class="sr-only"> Toggle navigation</span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+	<span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href=#>idane.pl</a>
+    </div>
+
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+	<li  class="active"><a href=#>O stronie</a></li>
+	<li class="dropdown">
+	  <a href=# class="dropdown-toggle"
+	     data-toggle="dropdown">Materiały<b class="caret"></b></a>
+	  <ul class="dropdown-menu">
+	    <li><a href="{{url_for('main.table_of_contents', content_container_short='minipodrecznik')}}">Minipodręcznik biostatystyki</a></li>
+	    <li><a href="{{url_for('main.table_of_contents', content_container_short='paradoksy')}}">Różności</a></li>
+	  </ul>
+
+	</li>
+	<li><a href=#>Ciekawe miejsca</a></li>
+	<li><a href=#>Kontakt</a></li>
+	<li><a href=#>Blog</a></li>
+	<li class="dropdown">
+	  <!--   <a href=# class="dropdown-toggle" data-toggle="dropdown">{{ current_user.email }} <b class="caret"></b></a> -->
+	  <!--   <ul class="dropdown-menu"> -->
+	  <!--     <li> <a href=#>My profile</a></li> -->
+	  <!--     <li><a href=#>Log Out</a></li> -->
+	  <!--   </ul> -->
+	  <!-- </li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+	<li><a href=#>Log In</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <div class="page-header">
+    <h2 align="center">idane.pl</h2>
+  </div>
+
+
+
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
