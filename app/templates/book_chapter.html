@@ -28,19 +28,23 @@
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-	<h1>{{chapter_title}}</h1>
-	<h5>{{author}}, <small>{{ moment(date_time).format('LL') }}</small></h5>
-	{{ body|safe }}
+	<h1>{{article.title}}</h1>
+	<h5>{{article.user.name}}, <small>{{ moment(article.date_time).format('LL') }}</small></h5>
+	{{ article.body|safe }}
 
   <ul class="pager">
-    <li class="previous"><a href="#">Poprzedni rozdział</a></li>
-    <li class="next"><a href="#">Następny rozdział</a></li>
+      {% if previous_article is not none %}
+    <li class="previous"><a href="{{ url_for('main.book_chapter', content_container_short = previous_article.content_container.short_title, short_title=previous_article.short_title) }}">Poprzedni</a></li>
+      {% endif %}
+      {% if next_article is not none %}
+    <li class="next"><a href="{{ url_for('main.book_chapter', content_container_short = next_article.content_container.short_title, short_title=next_article.short_title) }}">Następny</a></li>
+      {% endif %}
   </ul>
       </div>
       
       <div class="col-md-4">
 	<div class="well">
-	<h4>{{title}}</h4>
+	<h4>{{article.title}}</h4>
 	<ol>
 	  {% for chapter in contents %}
 	  <li> <a href="{{ url_for('main.book_chapter',

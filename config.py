@@ -6,7 +6,7 @@ import sys
 print(basedir, "dupa")
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'tosiula5332'
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'tosia'
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     IDANE_MAIL_SUBJECT_PREFIX = '[idane.pl]'
     IDANE_MAIL_SENDER = 'idane.pl Jarosław Piskorski <jaropis@idane.pl>'

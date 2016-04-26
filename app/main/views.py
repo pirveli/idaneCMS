@@ -68,12 +68,28 @@ def blog_contents():
 @main.route('/<content_container_short>/<short_title>')
 def book_chapter(content_container_short, short_title):
     article = Article.query.filter(Article.content_container.has(short_title = content_container_short)).filter_by(short_title=short_title).one()
-    author=article.user.name
-    date_time = article.date_time
-    chapter_title=article.title
+    page_current = article.page_number
+    all_articles = Article.query.filter(Article.content_container.has(short_title = content_container_short)).order_by(Article.page_number).all()
+    all_pages = [page.page_number for page in all_articles]
+    current_page_position = all_pages.index(page_current)
+    next_page = current_page_position + 1
+    previous_page = current_page_position - 1
+    if next_page >= len(all_pages):
+        next_page = -1
+    if previous_page < 0:
+        previous_page = -1
+    if next_page > 0:
+        next_article = Article.query.filter_by(page_number=all_pages[next_page]).one()
+    else:
+        next_article = None
+    if previous_page >= 0:
+        previous_article = Article.query.filter_by(page_number=all_pages[previous_page]).one()
+    else:
+        previous_article = None
     title, contents = generate_chapters_list(content_container_short)
     body=article.body
-    return render_template('book_chapter.html', author=author, title=title, body=body, contents=contents, content_container_short=content_container_short, chapter_title=chapter_title, date_time=date_time)
+    return render_template('book_chapter.html', article=article,  contents=contents, content_container_short=content_container_short,
+                           next_article=next_article, previous_article = previous_article)
 
 # @main.route('/contents/<content_container_short>')
 # def table_of_contents(content_container_short):
